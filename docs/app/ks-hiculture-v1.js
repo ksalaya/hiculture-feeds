@@ -2,8 +2,8 @@
 (function () {
 'use strict';
 const CURRENT_SCRIPT = document.currentScript;
-const APP_CSS = ":host {\n  all: initial;\n  display: block;\n  --parchment: #faf5eb;\n  --night: #17171f;\n  --ink-indigo: #2e334d;\n  --midnight: #1a2133;\n  --tide-teal: #387a85;\n  --bio-mint: #298f73;\n  --terra-rose: #a35454;\n  --cardinal: #b0384a;\n  --sunset-gold: #d4ab4f;\n  --copper: #b87342;\n  --stone: #736e6b;\n  --leaf: #5c8c61;\n  --moss: #4d7338;\n  --ember: #ba5740;\n  --vellum: #e6e0cc;\n  --sapphire: #335299;\n  --ultramarine: #2e428c;\n  --blueprint: #385c94;\n  --clay: #ba804d;\n  --serif: Baskerville, \"Libre Baskerville\", \"Baskerville Old Face\", Georgia, serif;\n  --sans: \"Avenir Next\", Avenir, \"Nunito Sans\", \"Segoe UI\", system-ui, -apple-system, sans-serif;\n  --radius: 24px;\n  --shadow: 0 12px 36px rgba(23, 23, 31, 0.08);\n  --tabbar-h: 74px;\n  color: var(--night);\n  font-family: var(--sans);\n  font-size: 16px;\n  line-height: 1.45;\n  -webkit-font-smoothing: antialiased;\n  -webkit-tap-highlight-color: transparent;\n}\n\n*, *::before, *::after { box-sizing: border-box; }\n\n.app {\n  font-family: var(--sans);\n  color: var(--night);\n  text-align: left;\n  position: relative;\n  min-height: 100vh;\n  min-height: 100svh;\n  background: linear-gradient(135deg, var(--parchment), #f2ebe0);\n  overflow-x: hidden;\n}\n\n/* Soft blurred blobs like BackgroundView / HomeWaterBackground */\n.backdrop { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }\n.backdrop i { position: absolute; border-radius: 50%; filter: blur(60px); }\n.backdrop .b1 { width: 260px; height: 260px; left: -40px; top: 40px; background: rgba(56, 122, 133, 0.14); }\n.backdrop .b2 { width: 340px; height: 340px; right: -60px; top: 20px; background: rgba(212, 171, 79, 0.2); }\n.backdrop .b3 { width: 260px; height: 260px; right: 10%; bottom: 8%; background: rgba(163, 84, 84, 0.12); }\n.backdrop .ring { position: absolute; width: 340px; height: 540px; right: -60px; bottom: -120px; border: 1px solid rgba(23, 23, 31, 0.07); border-radius: 170px; transform: rotate(12deg); filter: none; }\n.app.home .backdrop { background: linear-gradient(135deg, var(--parchment) 0%, rgba(56, 122, 133, 0.22) 45%, rgba(46, 66, 140, 0.15) 75%, rgba(250, 245, 235, 0.96) 100%); }\n.app.home .backdrop .ring { border-color: rgba(56, 122, 133, 0.12); border-radius: 50%; width: 520px; height: 210px; right: -120px; top: 45%; bottom: auto; transform: rotate(9deg); }\n\n.screen {\n  position: relative;\n  z-index: 1;\n  max-width: 860px;\n  margin: 0 auto;\n  padding: 12px 20px calc(var(--tabbar-h) + 40px + env(safe-area-inset-bottom));\n}\n\n/* Top bar */\n.topbar {\n  position: sticky; top: 0; z-index: 20;\n  display: flex; align-items: center; gap: 10px;\n  max-width: 860px; margin: 0 auto;\n  padding: calc(10px + env(safe-area-inset-top)) 20px 10px;\n}\n.topbar .title { flex: 1; text-align: center; font-weight: 600; font-size: 17px; color: var(--night); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }\n.topbar.scrolled { background: rgba(250, 245, 235, 0.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(23, 23, 31, 0.06); }\n.round-btn {\n  width: 44px; height: 44px; flex: none;\n  display: inline-flex; align-items: center; justify-content: center;\n  border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.8);\n  background: rgba(255, 255, 255, 0.75); color: var(--night);\n  box-shadow: 0 4px 14px rgba(23, 23, 31, 0.08);\n  cursor: pointer; text-decoration: none;\n}\n.round-btn svg { width: 20px; height: 20px; }\n.round-btn.gold { color: var(--sunset-gold); }\n.round-btn:focus-visible, .btn:focus-visible, .tap:focus-visible, a:focus-visible, button:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible { outline: 3px solid rgba(51, 82, 153, 0.55); outline-offset: 2px; }\n.spacer44 { width: 44px; flex: none; }\n\n/* Type */\n.hero-title { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 6vw, 38px); line-height: 1.12; margin: 0 0 8px; color: var(--night); letter-spacing: -0.01em; }\n.section-title { font-family: var(--serif); font-weight: 600; font-size: 22px; line-height: 1.2; margin: 0; color: var(--night); }\n.card-title { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.25; margin: 0; color: var(--night); }\n.body { font-size: 16px; color: rgba(23, 23, 31, 0.76); margin: 0; }\n.subhead { font-size: 14px; font-weight: 500; color: rgba(23, 23, 31, 0.72); margin: 0; }\n.caption { font-size: 12px; font-weight: 600; color: rgba(23, 23, 31, 0.62); margin: 0; }\n.muted { opacity: 0.8; }\n.accent-text { color: var(--accent, var(--tide-teal)); }\n.stack { display: flex; flex-direction: column; gap: 18px; }\n.stack.tight { gap: 12px; }\n.stack.xtight { gap: 8px; }\n.row { display: flex; align-items: center; gap: 10px; }\n.row.top { align-items: flex-start; }\n.row.wrap { flex-wrap: wrap; }\n.row.between { justify-content: space-between; }\n.grow { flex: 1; min-width: 0; }\n.section-header { display: flex; flex-direction: column; gap: 4px; }\n\n/* Cards */\n.card {\n  --accent: var(--sunset-gold);\n  position: relative;\n  padding: 16px;\n  border-radius: var(--radius);\n  background: rgba(255, 255, 255, 0.75);\n  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);\n  box-shadow: var(--shadow);\n  display: flex; flex-direction: column; gap: 12px;\n}\n.card.flat { box-shadow: none; }\n.tile {\n  --accent: var(--tide-teal);\n  padding: 14px; border-radius: 18px;\n  background: rgba(255, 255, 255, 0.62);\n  border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);\n}\n.tap { cursor: pointer; text-decoration: none; color: inherit; display: block; border: 0; background: none; padding: 0; text-align: left; font: inherit; width: 100%; }\n.tap:active > .card, .tap:active > .tile { transform: scale(0.99); }\n.inset { padding: 12px; border-radius: 16px; background: rgba(230, 224, 204, 0.75); }\n\n/* Buttons */\n.btn {\n  --accent: var(--sunset-gold);\n  display: inline-flex; align-items: center; justify-content: center; gap: 8px;\n  min-height: 40px; padding: 9px 16px;\n  border-radius: 999px; border: 0; cursor: pointer;\n  font: 600 15px/1.2 var(--sans);\n  text-decoration: none; white-space: nowrap;\n  transition: filter 0.15s ease, transform 0.1s ease;\n}\n.btn.primary { background: var(--accent); color: #fff; }\n.btn.secondary { background: color-mix(in srgb, var(--accent) 16%, rgba(255,255,255,0.6)); color: color-mix(in srgb, var(--accent) 78%, var(--night)); }\n.btn.ghost { background: transparent; color: var(--tide-teal); padding-left: 0; padding-right: 0; min-height: 0; }\n.btn:hover { filter: brightness(1.04); }\n.btn:active { transform: scale(0.98); }\n.btn[disabled] { opacity: 0.42; cursor: not-allowed; filter: none; transform: none; }\n.btn.block { width: 100%; }\n.btn svg { width: 16px; height: 16px; }\n.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }\n\n/* Segmented control */\n.seg { display: flex; padding: 3px; border-radius: 12px; background: rgba(118, 118, 128, 0.14); gap: 2px; }\n.seg button { flex: 1; border: 0; background: transparent; padding: 7px 6px; border-radius: 9px; font: 500 14px var(--sans); color: var(--night); cursor: pointer; white-space: nowrap; }\n.seg button[aria-pressed=\"true\"] { background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.12); font-weight: 600; }\n\n.select {\n  appearance: none; -webkit-appearance: none;\n  width: 100%; padding: 10px 36px 10px 12px;\n  border-radius: 12px; border: 0;\n  background: rgba(230, 224, 204, 0.7) url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2317171f99' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\") no-repeat right 12px center;\n  font: 500 14px var(--sans); color: var(--night);\n}\n.field-label { font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.6); margin: 0 0 6px; }\n.textarea, .input {\n  width: 100%; border-radius: 16px; padding: 12px;\n  border: 1px solid color-mix(in srgb, var(--accent, var(--sunset-gold)) 24%, transparent);\n  background: rgba(255,255,255,0.7); color: var(--night);\n  font: 16px/1.5 var(--sans); resize: vertical;\n}\n.textarea { min-height: 260px; }\n.input { border-radius: 12px; padding: 10px 12px; }\n.toggle { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(23,23,31,0.06); cursor: pointer; }\n.toggle:last-child { border-bottom: 0; }\n.toggle input { appearance: none; -webkit-appearance: none; width: 51px; height: 31px; border-radius: 16px; background: rgba(120,120,128,0.24); position: relative; flex: none; cursor: pointer; transition: background 0.2s; }\n.toggle input::after { content: \"\"; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s; }\n.toggle input:checked { background: var(--leaf); }\n.toggle input:checked::after { transform: translateX(20px); }\n\n/* Pills and tags */\n.pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.62); font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.72); }\n.pill svg { width: 13px; height: 13px; }\n.tag { display: inline-flex; padding: 3px 9px; border-radius: 999px; background: rgba(230,224,204,0.85); font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.65); white-space: nowrap; }\n.badge { display: inline-flex; padding: 6px 10px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 18%, transparent); font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.85); }\n.count-badge { display: inline-flex; padding: 4px 8px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 600; }\n.pill-row { display: flex; flex-wrap: wrap; gap: 8px; }\n\n/* Metrics */\n.metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }\n.metric { padding: 12px; border-radius: 16px; background: rgba(255,255,255,0.62); border: 1px solid rgba(23,23,31,0.08); display: flex; flex-direction: column; gap: 4px; min-width: 0; }\n.metric .v { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }\n.metric .l { font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.62); }\n.metric svg { width: 14px; height: 14px; color: var(--tide-teal); }\n.stat { padding: 10px; border-radius: 12px; background: rgba(230,224,204,0.75); display: flex; flex-direction: column; gap: 3px; min-width: 0; }\n.stat .t { font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.6); }\n.stat .v { font-size: 14px; font-weight: 600; }\n\n.icon-circle { width: 42px; height: 42px; flex: none; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--accent) 13%, transparent); color: var(--accent); font-size: 20px; }\n.icon-circle.lg { width: 48px; height: 48px; background: rgba(255,255,255,0.78); font-size: 22px; }\n.icon-circle svg { width: 20px; height: 20px; }\n.chev { color: rgba(23,23,31,0.42); flex: none; }\n.chev svg { width: 14px; height: 14px; }\n\n/* Progress bars */\n.bar { height: 4px; border-radius: 4px; background: rgba(23,23,31,0.1); overflow: hidden; }\n.bar > i { display: block; height: 100%; background: var(--accent); border-radius: 4px; transition: width 0.35s ease; }\n.bar.thick { height: 6px; }\n\n/* Home bento grid */\n.bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }\n@media (max-width: 340px) { .bento { grid-template-columns: 1fr; } }\n.home-card {\n  position: relative; display: block; overflow: hidden;\n  border-radius: var(--r, 32px); height: var(--h, 150px);\n  background: rgba(23,23,31,0.92);\n  border: 1px solid rgba(255,255,255,0.72);\n  box-shadow: 0 5px 16px rgba(23,23,31,0.12);\n  text-decoration: none; color: #fff;\n  transition: transform 0.26s cubic-bezier(.3,1.4,.5,1), filter 0.2s;\n}\n.home-card.span2 { grid-column: span 2; }\n.home-card:active { transform: scale(0.982, 0.962) translateY(2px); filter: brightness(0.975); }\n.home-card .art { position: absolute; inset: -28px; background-size: cover; background-position: center; animation: hc-float var(--dur, 14s) ease-in-out infinite; animation-delay: var(--delay, 0s); will-change: transform; }\n.home-card::after { content: \"\"; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23,23,31,0.04), rgba(23,23,31,0.22) 45%, rgba(23,23,31,0.82)); }\n.home-card .meta { position: absolute; left: 17px; right: 17px; bottom: 17px; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }\n.home-card .chip { font: 700 10px/1 var(--sans); letter-spacing: 0.07em; padding: 5px 8px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 86%, transparent); color: rgba(255,255,255,0.94); }\n.home-card .name { font-family: var(--serif); font-weight: 600; font-size: 19px; line-height: 1.15; text-shadow: 0 2px 4px rgba(23,23,31,0.45); }\n@keyframes hc-float {\n  0% { transform: translate3d(0, 0, 0) rotate(0deg); }\n  25% { transform: translate3d(calc(var(--amp, 3.7px) * 0.5), calc(var(--amp, 3.7px) * -1.3), 0) rotate(0.12deg); }\n  50% { transform: translate3d(calc(var(--amp, 3.7px) * -0.4), calc(var(--amp, 3.7px) * 0.9), 0) rotate(-0.1deg); }\n  75% { transform: translate3d(calc(var(--amp, 3.7px) * 0.3), calc(var(--amp, 3.7px) * 1.2), 0) rotate(0.08deg); }\n  100% { transform: translate3d(0, 0, 0) rotate(0deg); }\n}\n@media (prefers-reduced-motion: reduce) { .home-card .art { animation: none; } }\n\n/* Choices */\n.choice {\n  display: flex; align-items: flex-start; gap: 12px; width: 100%;\n  padding: 13px; border-radius: 16px; cursor: pointer; text-align: left;\n  background: rgba(255,255,255,0.58); border: 1px solid rgba(23,23,31,0.14);\n  font: 16px/1.45 var(--sans); color: var(--night);\n}\n.choice .letter { width: 30px; height: 30px; flex: none; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; background: rgba(23,23,31,0.06); }\n.choice .text { flex: 1; min-width: 0; }\n.choice .mark { flex: none; width: 20px; height: 20px; }\n.choice.selected { border: 2px solid var(--sunset-gold); background: rgba(212,171,79,0.12); padding: 12px; }\n.choice.selected .letter { background: rgba(212,171,79,0.22); }\n.choice.correct { border: 1px solid var(--leaf); background: rgba(92,140,97,0.13); }\n.choice.correct .letter { background: var(--leaf); color: #fff; }\n.choice.wrong { border: 1px solid var(--ember); background: rgba(186,87,64,0.11); }\n.choice.wrong .letter { background: var(--ember); color: #fff; }\n.choice[disabled] { cursor: default; }\n.choice.compact { padding: 12px; font-size: 14px; font-weight: 500; background: rgba(230,224,204,0.7); border-color: transparent; }\n.choice.compact.selected { background: rgba(56,122,133,0.12); border: 2px solid var(--tide-teal); padding: 11px; }\n.choice.compact.correct { background: rgba(92,140,97,0.15); border: 1px solid var(--leaf); }\n.choice.compact.wrong { background: rgba(186,87,64,0.12); border: 1px solid var(--ember); }\n\n.feedback { padding: 14px; border-radius: 18px; background: rgba(230,224,204,0.72); display: flex; flex-direction: column; gap: 14px; }\n.feedback h4 { margin: 0; }\n.divider { height: 1px; background: rgba(23,23,31,0.1); border: 0; margin: 2px 0; }\n.review-row { display: flex; gap: 9px; align-items: flex-start; }\n.review-row svg { width: 18px; height: 18px; flex: none; margin-top: 1px; }\n\n/* Source rows */\n.src { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border-radius: 18px; background: rgba(255,255,255,0.62); border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent); text-decoration: none; color: inherit; }\n.src .ic { width: 24px; flex: none; text-align: center; font-size: 18px; color: var(--accent); }\n.src .ic svg { width: 18px; height: 18px; }\n.src .t { font-size: 14px; font-weight: 600; color: var(--night); }\n.src .s { font-size: 12px; font-weight: 500; color: rgba(23,23,31,0.66); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }\n.src .p { font-size: 12px; font-weight: 600; color: var(--accent); }\n.src .out { flex: none; color: rgba(23,23,31,0.4); }\n.src .out svg { width: 14px; height: 14px; }\n.src-wrap { position: relative; }\n.src-wrap .save { position: absolute; right: 10px; bottom: 10px; }\n.icon-btn { border: 0; background: rgba(255,255,255,0.7); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; color: rgba(23,23,31,0.5); }\n.icon-btn.on { color: var(--sunset-gold); }\n.icon-btn svg { width: 15px; height: 15px; }\n\n/* Tab bar */\n.tabbar {\n  position: fixed; z-index: 30; left: 50%; transform: translateX(-50%);\n  bottom: calc(10px + env(safe-area-inset-bottom));\n  width: min(560px, calc(100% - 28px));\n  display: grid; grid-template-columns: repeat(5, 1fr);\n  padding: 6px; border-radius: 34px;\n  background: rgba(250, 245, 235, 0.82);\n  backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);\n  border: 1px solid rgba(255,255,255,0.9);\n  box-shadow: 0 10px 30px rgba(23,23,31,0.14);\n}\n.tabbar a { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 4px; border-radius: 28px; text-decoration: none; color: var(--night); font: 500 11px var(--sans); }\n.tabbar a svg { width: 24px; height: 24px; }\n.tabbar a[aria-current=\"page\"] { color: var(--sunset-gold); background: rgba(230,224,204,0.7); }\n\n/* Disclosure */\ndetails.disclosure { border-radius: 14px; }\ndetails.disclosure > summary { cursor: pointer; list-style: none; font-size: 14px; font-weight: 600; color: var(--accent, var(--tide-teal)); display: flex; align-items: center; gap: 6px; }\ndetails.disclosure > summary::-webkit-details-marker { display: none; }\ndetails.disclosure > summary::before { content: \"›\"; display: inline-block; transition: transform 0.2s; font-size: 18px; line-height: 1; }\ndetails.disclosure[open] > summary::before { transform: rotate(90deg); }\ndetails.disclosure > .content { padding-top: 10px; display: flex; flex-direction: column; gap: 8px; }\n\n.list-dot { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; color: rgba(23,23,31,0.76); }\n.list-dot::before { content: \"\"; width: 6px; height: 6px; border-radius: 50%; background: var(--accent, var(--tide-teal)); flex: none; margin-top: 7px; }\n\n.hscroll { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 2px 2px 8px; margin: 0 -2px; scrollbar-width: none; }\n.hscroll::-webkit-scrollbar { display: none; }\n.hscroll > * { flex: 0 0 min(300px, 82%); scroll-snap-align: start; }\n\n.banner { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 14px; background: color-mix(in srgb, var(--accent) 9%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent); }\n.banner svg { width: 16px; height: 16px; color: var(--accent); flex: none; margin-top: 1px; }\n\n.timer { font-variant-numeric: tabular-nums; }\n.notice { font-size: 12px; font-weight: 600; color: var(--ember); margin: 0; }\n.empty { text-align: left; }\n\n.map { height: 320px; border-radius: 24px; overflow: hidden; border: 1px solid rgba(23,23,31,0.1); background: #e8e4da; }\n.map .leaflet-container { font-family: var(--sans); background: #ece6d6; }\n.map .leaflet-tile-pane { filter: grayscale(0.55) sepia(0.18) brightness(1.04); }\n.pin { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font: 700 11px var(--sans); border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }\n\n.statute-body { white-space: pre-wrap; font-size: 15px; line-height: 1.6; color: rgba(23,23,31,0.85); max-height: 60vh; overflow: auto; padding: 12px; border-radius: 14px; background: rgba(255,255,255,0.6); }\n\n.reorder { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid rgba(23,23,31,0.06); }\n.reorder:last-child { border-bottom: 0; }\n.reorder .name { flex: 1; font-size: 15px; }\n.reorder button { width: 32px; height: 32px; border-radius: 50%; border: 0; background: rgba(230,224,204,0.8); cursor: pointer; font-size: 14px; }\n.reorder button[disabled] { opacity: 0.35; cursor: default; }\n\n.toast { position: fixed; z-index: 40; left: 50%; bottom: calc(var(--tabbar-h) + 26px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: rgba(23,23,31,0.88); color: #fff; padding: 10px 16px; border-radius: 999px; font: 600 13px var(--sans); box-shadow: 0 6px 20px rgba(0,0,0,0.2); animation: toast-in 0.25s ease; max-width: calc(100% - 40px); text-align: center; }\n@keyframes toast-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }\n\n.loading { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; }\n.ripple { width: 76px; height: 76px; border-radius: 50%; border: 2px solid rgba(56,122,133,0.5); animation: rip 1.6s ease-out infinite; }\n@keyframes rip { 0% { transform: scale(0.6); opacity: 1; } 100% { transform: scale(1.4); opacity: 0; } }\n\na.link { color: var(--tide-teal); font-weight: 600; font-size: 14px; text-decoration: none; display: inline-flex; gap: 6px; align-items: center; }\na.link svg { width: 14px; height: 14px; }\na.link:hover { text-decoration: underline; }\n.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }\n.footer-note { font-size: 12px; color: rgba(23,23,31,0.5); text-align: center; padding: 10px 0 0; }\n.footer-note a { color: inherit; }\n\n/* MIT course catalog */\n.chips { display: flex; gap: 8px; overflow-x: auto; padding: 2px 20px; margin: 0 -20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }\n.chips::-webkit-scrollbar { display: none; }\n.chip { flex: none; display: inline-flex; align-items: center; gap: 5px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(23,23,31,0.1); background: rgba(255,255,255,0.7); font: 600 12px var(--sans); color: rgba(23,23,31,0.8); cursor: pointer; white-space: nowrap; }\n.chip svg { width: 12px; height: 12px; }\n.chip[aria-pressed=\"true\"] { background: var(--cardinal); border-color: transparent; color: var(--parchment); }\n.course-card { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: var(--radius); background: rgba(255,255,255,0.75); border: 1px solid color-mix(in srgb, var(--cardinal) 25%, transparent); box-shadow: 0 12px 18px rgba(23,23,31,0.08); text-decoration: none; color: inherit; }\n.course-card:hover { border-color: color-mix(in srgb, var(--cardinal) 55%, transparent); }\n.course-card .video { display: inline-flex; align-items: center; gap: 4px; color: var(--cardinal); }\n.course-card .video svg { width: 12px; height: 12px; }\n.clamp3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }\n";
-window.__KSHC_ASSET_REVISIONS = {"ks-hiculture-data-v1.js":"12bcc3493896","ks-hiculture-learning-v1.js":"7b0a779a4ab4","ks-hiculture-law-bank-v1.js":"1e24338494fa","ks-hiculture-med-bank-v1.js":"7aea9a954dac","ks-hiculture-feed-v1.js":"d7ab4ebc27e6","ks-hiculture-law-library-v1.js":"fdfb64b57739","ks-hiculture-courses-1-v1.js":"1e49a31bed60","ks-hiculture-courses-2-v1.js":"f42527189ad9","ks-hiculture-courses-3-v1.js":"a2b525aeef5b","ks-hiculture-courses-4-v1.js":"9c1ffc28a3d9","ks-hiculture-card-science.jpg":"5b3f109ae8dd","ks-hiculture-card-biotechnology.jpg":"caaee3f0dff4","ks-hiculture-card-botany.jpg":"393963a55692","ks-hiculture-card-medicine.jpg":"9c1e2de9c133","ks-hiculture-card-space.jpg":"cc9542924860","ks-hiculture-card-philosophy.jpg":"835fe5e3805a","ks-hiculture-card-history.jpg":"5c6bef4d69dc","ks-hiculture-card-people.jpg":"094b1ab508ce","ks-hiculture-card-law.jpg":"17e028e0cd5c","ks-hiculture-card-investing.jpg":"3e25415a9a69","ks-hiculture-card-business.jpg":"09a636c398c0","ks-hiculture-card-recipe.jpg":"3b699d71c6c2","ks-hiculture-card-obscure.jpg":"84bdd84c42c9","ks-hiculture-card-literature.jpg":"d40ff6587a85","ks-hiculture-card-art.jpg":"929d42847d1c","ks-hiculture-card-architecture.jpg":"3566a82e21fe","ks-hiculture-card-design.jpg":"a2a729b67e27"};
+const APP_CSS = ":host {\n  all: initial;\n  display: block;\n  --parchment: #faf5eb;\n  --night: #17171f;\n  --ink-indigo: #2e334d;\n  --midnight: #1a2133;\n  --tide-teal: #387a85;\n  --bio-mint: #298f73;\n  --terra-rose: #a35454;\n  --cardinal: #b0384a;\n  --sunset-gold: #d4ab4f;\n  --copper: #b87342;\n  --stone: #736e6b;\n  --leaf: #5c8c61;\n  --moss: #4d7338;\n  --ember: #ba5740;\n  --vellum: #e6e0cc;\n  --sapphire: #335299;\n  --ultramarine: #2e428c;\n  --blueprint: #385c94;\n  --clay: #ba804d;\n  --serif: Baskerville, \"Libre Baskerville\", \"Baskerville Old Face\", Georgia, serif;\n  --sans: \"Avenir Next\", Avenir, \"Nunito Sans\", \"Segoe UI\", system-ui, -apple-system, sans-serif;\n  --radius: 24px;\n  --shadow: 0 12px 36px rgba(23, 23, 31, 0.08);\n  --tabbar-h: 74px;\n  color: var(--night);\n  font-family: var(--sans);\n  font-size: 16px;\n  line-height: 1.45;\n  -webkit-font-smoothing: antialiased;\n  -webkit-tap-highlight-color: transparent;\n}\n\n*, *::before, *::after { box-sizing: border-box; }\n\n.app {\n  font-family: var(--sans);\n  color: var(--night);\n  text-align: left;\n  position: relative;\n  min-height: 100vh;\n  min-height: 100svh;\n  background: linear-gradient(135deg, var(--parchment), #f2ebe0);\n  overflow-x: hidden;\n}\n\n/* Soft blurred blobs like BackgroundView / HomeWaterBackground */\n.backdrop { position: fixed; inset: 0; pointer-events: none; z-index: 0; overflow: hidden; }\n.backdrop i { position: absolute; border-radius: 50%; filter: blur(60px); }\n.backdrop .b1 { width: 260px; height: 260px; left: -40px; top: 40px; background: rgba(56, 122, 133, 0.14); }\n.backdrop .b2 { width: 340px; height: 340px; right: -60px; top: 20px; background: rgba(212, 171, 79, 0.2); }\n.backdrop .b3 { width: 260px; height: 260px; right: 10%; bottom: 8%; background: rgba(163, 84, 84, 0.12); }\n.backdrop .ring { position: absolute; width: 340px; height: 540px; right: -60px; bottom: -120px; border: 1px solid rgba(23, 23, 31, 0.07); border-radius: 170px; transform: rotate(12deg); filter: none; }\n.app.home .backdrop { background: linear-gradient(135deg, var(--parchment) 0%, rgba(56, 122, 133, 0.22) 45%, rgba(46, 66, 140, 0.15) 75%, rgba(250, 245, 235, 0.96) 100%); }\n.app.home .backdrop .ring { border-color: rgba(56, 122, 133, 0.12); border-radius: 50%; width: 520px; height: 210px; right: -120px; top: 45%; bottom: auto; transform: rotate(9deg); }\n\n.screen {\n  position: relative;\n  z-index: 1;\n  max-width: 860px;\n  margin: 0 auto;\n  padding: 12px 20px calc(var(--tabbar-h) + 40px + env(safe-area-inset-bottom));\n}\n\n/* Top bar */\n.topbar {\n  position: sticky; top: 0; z-index: 20;\n  display: flex; align-items: center; gap: 10px;\n  max-width: 860px; margin: 0 auto;\n  padding: calc(10px + env(safe-area-inset-top)) 20px 10px;\n}\n.topbar .title { flex: 1; text-align: center; font-weight: 600; font-size: 17px; color: var(--night); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }\n.topbar.scrolled { background: rgba(250, 245, 235, 0.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); box-shadow: 0 1px 0 rgba(23, 23, 31, 0.06); }\n.round-btn {\n  width: 44px; height: 44px; flex: none;\n  display: inline-flex; align-items: center; justify-content: center;\n  border-radius: 50%; border: 1px solid rgba(255, 255, 255, 0.8);\n  background: rgba(255, 255, 255, 0.75); color: var(--night);\n  box-shadow: 0 4px 14px rgba(23, 23, 31, 0.08);\n  cursor: pointer; text-decoration: none;\n}\n.round-btn svg { width: 20px; height: 20px; }\n.round-btn.gold { color: var(--sunset-gold); }\n.round-btn:focus-visible, .btn:focus-visible, .tap:focus-visible, a:focus-visible, button:focus-visible, select:focus-visible, textarea:focus-visible, input:focus-visible { outline: 3px solid rgba(51, 82, 153, 0.55); outline-offset: 2px; }\n.spacer44 { width: 44px; flex: none; }\n\n/* Type */\n.hero-title { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 6vw, 38px); line-height: 1.12; margin: 0 0 8px; color: var(--night); letter-spacing: -0.01em; }\n.section-title { font-family: var(--serif); font-weight: 600; font-size: 22px; line-height: 1.2; margin: 0; color: var(--night); }\n.card-title { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.25; margin: 0; color: var(--night); }\n.body { font-size: 16px; color: rgba(23, 23, 31, 0.76); margin: 0; }\n.subhead { font-size: 14px; font-weight: 500; color: rgba(23, 23, 31, 0.72); margin: 0; }\n.caption { font-size: 12px; font-weight: 600; color: rgba(23, 23, 31, 0.62); margin: 0; }\n.muted { opacity: 0.8; }\n.accent-text { color: var(--accent, var(--tide-teal)); }\n.stack { display: flex; flex-direction: column; gap: 18px; }\n.stack.tight { gap: 12px; }\n.stack.xtight { gap: 8px; }\n.row { display: flex; align-items: center; gap: 10px; }\n.row.top { align-items: flex-start; }\n.row.wrap { flex-wrap: wrap; }\n.row.between { justify-content: space-between; }\n.grow { flex: 1; min-width: 0; }\n.section-header { display: flex; flex-direction: column; gap: 4px; }\n\n/* Cards */\n.card {\n  --accent: var(--sunset-gold);\n  position: relative;\n  padding: 16px;\n  border-radius: var(--radius);\n  background: rgba(255, 255, 255, 0.75);\n  border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);\n  box-shadow: var(--shadow);\n  display: flex; flex-direction: column; gap: 12px;\n}\n.card.flat { box-shadow: none; }\n.tile {\n  --accent: var(--tide-teal);\n  padding: 14px; border-radius: 18px;\n  background: rgba(255, 255, 255, 0.62);\n  border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent);\n}\n.tap { cursor: pointer; text-decoration: none; color: inherit; display: block; border: 0; background: none; padding: 0; text-align: left; font: inherit; width: 100%; }\n.tap:active > .card, .tap:active > .tile { transform: scale(0.99); }\n.inset { padding: 12px; border-radius: 16px; background: rgba(230, 224, 204, 0.75); }\n\n/* Buttons */\n.btn {\n  --accent: var(--sunset-gold);\n  display: inline-flex; align-items: center; justify-content: center; gap: 8px;\n  min-height: 40px; padding: 9px 16px;\n  border-radius: 999px; border: 0; cursor: pointer;\n  font: 600 15px/1.2 var(--sans);\n  text-decoration: none; white-space: nowrap;\n  transition: filter 0.15s ease, transform 0.1s ease;\n}\n.btn.primary { background: var(--accent); color: #fff; }\n.btn.secondary { background: color-mix(in srgb, var(--accent) 16%, rgba(255,255,255,0.6)); color: color-mix(in srgb, var(--accent) 78%, var(--night)); }\n.btn.ghost { background: transparent; color: var(--tide-teal); padding-left: 0; padding-right: 0; min-height: 0; }\n.btn:hover { filter: brightness(1.04); }\n.btn:active { transform: scale(0.98); }\n.btn[disabled] { opacity: 0.42; cursor: not-allowed; filter: none; transform: none; }\n.btn.block { width: 100%; }\n.btn svg { width: 16px; height: 16px; }\n.btn-row { display: flex; flex-wrap: wrap; gap: 10px; }\n\n/* Segmented control */\n.seg { display: flex; padding: 3px; border-radius: 12px; background: rgba(118, 118, 128, 0.14); gap: 2px; }\n.seg button { flex: 1; border: 0; background: transparent; padding: 7px 6px; border-radius: 9px; font: 500 14px var(--sans); color: var(--night); cursor: pointer; white-space: nowrap; }\n.seg button[aria-pressed=\"true\"] { background: #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.12); font-weight: 600; }\n\n.select {\n  appearance: none; -webkit-appearance: none;\n  width: 100%; padding: 10px 36px 10px 12px;\n  border-radius: 12px; border: 0;\n  background: rgba(230, 224, 204, 0.7) url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2317171f99' stroke-width='2.5'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E\") no-repeat right 12px center;\n  font: 500 14px var(--sans); color: var(--night);\n}\n.field-label { font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.6); margin: 0 0 6px; }\n.textarea, .input {\n  width: 100%; border-radius: 16px; padding: 12px;\n  border: 1px solid color-mix(in srgb, var(--accent, var(--sunset-gold)) 24%, transparent);\n  background: rgba(255,255,255,0.7); color: var(--night);\n  font: 16px/1.5 var(--sans); resize: vertical;\n}\n.textarea { min-height: 260px; }\n.input { border-radius: 12px; padding: 10px 12px; }\n.toggle { display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(23,23,31,0.06); cursor: pointer; }\n.toggle:last-child { border-bottom: 0; }\n.toggle input { appearance: none; -webkit-appearance: none; width: 51px; height: 31px; border-radius: 16px; background: rgba(120,120,128,0.24); position: relative; flex: none; cursor: pointer; transition: background 0.2s; }\n.toggle input::after { content: \"\"; position: absolute; top: 2px; left: 2px; width: 27px; height: 27px; border-radius: 50%; background: #fff; box-shadow: 0 2px 4px rgba(0,0,0,0.2); transition: transform 0.2s; }\n.toggle input:checked { background: var(--leaf); }\n.toggle input:checked::after { transform: translateX(20px); }\n\n/* Pills and tags */\n.pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 10px; border-radius: 999px; background: rgba(255,255,255,0.62); font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.72); }\n.pill svg { width: 13px; height: 13px; }\n.tag { display: inline-flex; padding: 3px 9px; border-radius: 999px; background: rgba(230,224,204,0.85); font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.65); white-space: nowrap; }\n.badge { display: inline-flex; padding: 6px 10px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 18%, transparent); font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.85); }\n.count-badge { display: inline-flex; padding: 4px 8px; border-radius: 999px; background: var(--accent); color: #fff; font-size: 12px; font-weight: 600; }\n.pill-row { display: flex; flex-wrap: wrap; gap: 8px; }\n\n/* Metrics */\n.metrics { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }\n.metric { padding: 12px; border-radius: 16px; background: rgba(255,255,255,0.62); border: 1px solid rgba(23,23,31,0.08); display: flex; flex-direction: column; gap: 4px; min-width: 0; }\n.metric .v { font-family: var(--serif); font-weight: 600; font-size: 20px; line-height: 1.1; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }\n.metric .l { font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.62); }\n.metric svg { width: 14px; height: 14px; color: var(--tide-teal); }\n.stat { padding: 10px; border-radius: 12px; background: rgba(230,224,204,0.75); display: flex; flex-direction: column; gap: 3px; min-width: 0; }\n.stat .t { font-size: 12px; font-weight: 600; color: rgba(23,23,31,0.6); }\n.stat .v { font-size: 14px; font-weight: 600; }\n\n.icon-circle { width: 42px; height: 42px; flex: none; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; background: color-mix(in srgb, var(--accent) 13%, transparent); color: var(--accent); font-size: 20px; }\n.icon-circle.lg { width: 48px; height: 48px; background: rgba(255,255,255,0.78); font-size: 22px; }\n.icon-circle svg { width: 20px; height: 20px; }\n.chev { color: rgba(23,23,31,0.42); flex: none; }\n.chev svg { width: 14px; height: 14px; }\n\n/* Progress bars */\n.bar { height: 4px; border-radius: 4px; background: rgba(23,23,31,0.1); overflow: hidden; }\n.bar > i { display: block; height: 100%; background: var(--accent); border-radius: 4px; transition: width 0.35s ease; }\n.bar.thick { height: 6px; }\n\n/* Home bento grid */\n.bento { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }\n@media (max-width: 340px) { .bento { grid-template-columns: 1fr; } }\n.home-card {\n  position: relative; display: block; overflow: hidden;\n  border-radius: var(--r, 32px); height: var(--h, 150px);\n  background: rgba(23,23,31,0.92);\n  border: 1px solid rgba(255,255,255,0.72);\n  box-shadow: 0 5px 16px rgba(23,23,31,0.12);\n  text-decoration: none; color: #fff;\n  transition: transform 0.26s cubic-bezier(.3,1.4,.5,1), filter 0.2s;\n}\n.home-card.span2 { grid-column: span 2; }\n.home-card:active { transform: scale(0.982, 0.962) translateY(2px); filter: brightness(0.975); }\n.home-card .art { position: absolute; inset: -28px; background-size: cover; background-position: center; animation: hc-float var(--dur, 14s) ease-in-out infinite; animation-delay: var(--delay, 0s); will-change: transform; }\n.home-card::after { content: \"\"; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(23,23,31,0.04), rgba(23,23,31,0.22) 45%, rgba(23,23,31,0.82)); }\n.home-card .meta { position: absolute; left: 17px; right: 17px; bottom: 17px; z-index: 1; display: flex; flex-direction: column; align-items: flex-start; gap: 5px; }\n.home-card .chip { font: 700 10px/1 var(--sans); letter-spacing: 0.07em; padding: 5px 8px; border-radius: 999px; background: color-mix(in srgb, var(--accent) 86%, transparent); color: rgba(255,255,255,0.94); }\n.home-card .name { font-family: var(--serif); font-weight: 600; font-size: 19px; line-height: 1.15; text-shadow: 0 2px 4px rgba(23,23,31,0.45); }\n@keyframes hc-float {\n  0% { transform: translate3d(0, 0, 0) rotate(0deg); }\n  25% { transform: translate3d(calc(var(--amp, 3.7px) * 0.5), calc(var(--amp, 3.7px) * -1.3), 0) rotate(0.12deg); }\n  50% { transform: translate3d(calc(var(--amp, 3.7px) * -0.4), calc(var(--amp, 3.7px) * 0.9), 0) rotate(-0.1deg); }\n  75% { transform: translate3d(calc(var(--amp, 3.7px) * 0.3), calc(var(--amp, 3.7px) * 1.2), 0) rotate(0.08deg); }\n  100% { transform: translate3d(0, 0, 0) rotate(0deg); }\n}\n@media (prefers-reduced-motion: reduce) { .home-card .art { animation: none; } }\n\n/* Choices */\n.choice {\n  display: flex; align-items: flex-start; gap: 12px; width: 100%;\n  padding: 13px; border-radius: 16px; cursor: pointer; text-align: left;\n  background: rgba(255,255,255,0.58); border: 1px solid rgba(23,23,31,0.14);\n  font: 16px/1.45 var(--sans); color: var(--night);\n}\n.choice .letter { width: 30px; height: 30px; flex: none; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; background: rgba(23,23,31,0.06); }\n.choice .text { flex: 1; min-width: 0; }\n.choice .mark { flex: none; width: 20px; height: 20px; }\n.choice.selected { border: 2px solid var(--sunset-gold); background: rgba(212,171,79,0.12); padding: 12px; }\n.choice.selected .letter { background: rgba(212,171,79,0.22); }\n.choice.correct { border: 1px solid var(--leaf); background: rgba(92,140,97,0.13); }\n.choice.correct .letter { background: var(--leaf); color: #fff; }\n.choice.wrong { border: 1px solid var(--ember); background: rgba(186,87,64,0.11); }\n.choice.wrong .letter { background: var(--ember); color: #fff; }\n.choice[disabled] { cursor: default; }\n.choice.compact { padding: 12px; font-size: 14px; font-weight: 500; background: rgba(230,224,204,0.7); border-color: transparent; }\n.choice.compact.selected { background: rgba(56,122,133,0.12); border: 2px solid var(--tide-teal); padding: 11px; }\n.choice.compact.correct { background: rgba(92,140,97,0.15); border: 1px solid var(--leaf); }\n.choice.compact.wrong { background: rgba(186,87,64,0.12); border: 1px solid var(--ember); }\n\n.feedback { padding: 14px; border-radius: 18px; background: rgba(230,224,204,0.72); display: flex; flex-direction: column; gap: 14px; }\n.feedback h4 { margin: 0; }\n.divider { height: 1px; background: rgba(23,23,31,0.1); border: 0; margin: 2px 0; }\n.review-row { display: flex; gap: 9px; align-items: flex-start; }\n.review-row svg { width: 18px; height: 18px; flex: none; margin-top: 1px; }\n\n/* Source rows */\n.src { display: flex; gap: 12px; align-items: flex-start; padding: 14px; border-radius: 18px; background: rgba(255,255,255,0.62); border: 1px solid color-mix(in srgb, var(--accent) 16%, transparent); text-decoration: none; color: inherit; }\n.src .ic { width: 24px; flex: none; text-align: center; font-size: 18px; color: var(--accent); }\n.src .ic svg { width: 18px; height: 18px; }\n.src .t { font-size: 14px; font-weight: 600; color: var(--night); }\n.src .s { font-size: 12px; font-weight: 500; color: rgba(23,23,31,0.66); display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }\n.src .p { font-size: 12px; font-weight: 600; color: var(--accent); }\n.src .out { flex: none; color: rgba(23,23,31,0.4); }\n.src .out svg { width: 14px; height: 14px; }\n.src-wrap { position: relative; }\n.src-wrap .save { position: absolute; right: 10px; bottom: 10px; }\n.icon-btn { border: 0; background: rgba(255,255,255,0.7); width: 32px; height: 32px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; cursor: pointer; color: rgba(23,23,31,0.5); }\n.icon-btn.on { color: var(--sunset-gold); }\n.icon-btn svg { width: 15px; height: 15px; }\n\n/* Tab bar */\n.tabbar {\n  position: fixed; z-index: 30; left: 50%; transform: translateX(-50%);\n  bottom: calc(10px + env(safe-area-inset-bottom));\n  width: min(560px, calc(100% - 28px));\n  display: grid; grid-template-columns: repeat(5, 1fr);\n  padding: 6px; border-radius: 34px;\n  background: rgba(250, 245, 235, 0.82);\n  backdrop-filter: blur(18px) saturate(1.4); -webkit-backdrop-filter: blur(18px) saturate(1.4);\n  border: 1px solid rgba(255,255,255,0.9);\n  box-shadow: 0 10px 30px rgba(23,23,31,0.14);\n}\n.tabbar a { display: flex; flex-direction: column; align-items: center; gap: 3px; padding: 7px 4px; border-radius: 28px; text-decoration: none; color: var(--night); font: 500 11px var(--sans); }\n.tabbar a svg { width: 24px; height: 24px; }\n.tabbar a[aria-current=\"page\"] { color: var(--sunset-gold); background: rgba(230,224,204,0.7); }\n\n/* Disclosure */\ndetails.disclosure { border-radius: 14px; }\ndetails.disclosure > summary { cursor: pointer; list-style: none; font-size: 14px; font-weight: 600; color: var(--accent, var(--tide-teal)); display: flex; align-items: center; gap: 6px; }\ndetails.disclosure > summary::-webkit-details-marker { display: none; }\ndetails.disclosure > summary::before { content: \"›\"; display: inline-block; transition: transform 0.2s; font-size: 18px; line-height: 1; }\ndetails.disclosure[open] > summary::before { transform: rotate(90deg); }\ndetails.disclosure > .content { padding-top: 10px; display: flex; flex-direction: column; gap: 8px; }\n\n.list-dot { display: flex; gap: 8px; align-items: flex-start; font-size: 14px; color: rgba(23,23,31,0.76); }\n.list-dot::before { content: \"\"; width: 6px; height: 6px; border-radius: 50%; background: var(--accent, var(--tide-teal)); flex: none; margin-top: 7px; }\n\n.hscroll { display: flex; gap: 12px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 2px 2px 8px; margin: 0 -2px; scrollbar-width: none; }\n.hscroll::-webkit-scrollbar { display: none; }\n.hscroll > * { flex: 0 0 min(300px, 82%); scroll-snap-align: start; }\n\n.banner { display: flex; gap: 10px; align-items: flex-start; padding: 10px 12px; border-radius: 14px; background: color-mix(in srgb, var(--accent) 9%, transparent); border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent); }\n.banner svg { width: 16px; height: 16px; color: var(--accent); flex: none; margin-top: 1px; }\n\n.timer { font-variant-numeric: tabular-nums; }\n.notice { font-size: 12px; font-weight: 600; color: var(--ember); margin: 0; }\n.empty { text-align: left; }\n\n.map { height: 320px; border-radius: 24px; overflow: hidden; border: 1px solid rgba(23,23,31,0.1); background: #e8e4da; }\n.map .leaflet-container { font-family: var(--sans); background: #ece6d6; }\n.map .leaflet-tile-pane { filter: grayscale(0.55) sepia(0.18) brightness(1.04); }\n.pin { width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font: 700 11px var(--sans); border: 2px solid #fff; box-shadow: 0 2px 6px rgba(0,0,0,0.25); }\n\n.statute-body { white-space: pre-wrap; font-size: 15px; line-height: 1.6; color: rgba(23,23,31,0.85); max-height: 60vh; overflow: auto; padding: 12px; border-radius: 14px; background: rgba(255,255,255,0.6); }\n\n.reorder { display: flex; align-items: center; gap: 8px; padding: 8px 0; border-bottom: 1px solid rgba(23,23,31,0.06); }\n.reorder:last-child { border-bottom: 0; }\n.reorder .name { flex: 1; font-size: 15px; }\n.reorder button { width: 32px; height: 32px; border-radius: 50%; border: 0; background: rgba(230,224,204,0.8); cursor: pointer; font-size: 14px; }\n.reorder button[disabled] { opacity: 0.35; cursor: default; }\n\n.toast { position: fixed; z-index: 40; left: 50%; bottom: calc(var(--tabbar-h) + 26px + env(safe-area-inset-bottom)); transform: translateX(-50%); background: rgba(23,23,31,0.88); color: #fff; padding: 10px 16px; border-radius: 999px; font: 600 13px var(--sans); box-shadow: 0 6px 20px rgba(0,0,0,0.2); animation: toast-in 0.25s ease; max-width: calc(100% - 40px); text-align: center; }\n@keyframes toast-in { from { opacity: 0; transform: translate(-50%, 8px); } to { opacity: 1; transform: translate(-50%, 0); } }\n\n.loading { min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; text-align: center; }\n.ripple { width: 76px; height: 76px; border-radius: 50%; border: 2px solid rgba(56,122,133,0.5); animation: rip 1.6s ease-out infinite; }\n@keyframes rip { 0% { transform: scale(0.6); opacity: 1; } 100% { transform: scale(1.4); opacity: 0; } }\n\na.link { color: var(--tide-teal); font-weight: 600; font-size: 14px; text-decoration: none; display: inline-flex; gap: 6px; align-items: center; }\na.link svg { width: 14px; height: 14px; }\na.link:hover { text-decoration: underline; }\n.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }\n.footer-note { font-size: 12px; color: rgba(23,23,31,0.5); text-align: center; padding: 10px 0 0; }\n.footer-note a { color: inherit; }\n\n/* MIT course catalog */\n.chips { display: flex; gap: 8px; overflow-x: auto; padding: 2px 20px; margin: 0 -20px; scrollbar-width: none; -webkit-overflow-scrolling: touch; }\n.chips::-webkit-scrollbar { display: none; }\n.chip { flex: none; display: inline-flex; align-items: center; gap: 5px; padding: 8px 12px; border-radius: 999px; border: 1px solid rgba(23,23,31,0.1); background: rgba(255,255,255,0.7); font: 600 12px var(--sans); color: rgba(23,23,31,0.8); cursor: pointer; white-space: nowrap; }\n.chip svg { width: 12px; height: 12px; }\n.chip[aria-pressed=\"true\"] { background: var(--cardinal); border-color: transparent; color: var(--parchment); }\n.course-card { display: flex; flex-direction: column; gap: 8px; padding: 16px; border-radius: var(--radius); background: rgba(255,255,255,0.75); border: 1px solid color-mix(in srgb, var(--cardinal) 25%, transparent); box-shadow: 0 12px 18px rgba(23,23,31,0.08); text-decoration: none; color: inherit; }\n.course-card:hover { border-color: color-mix(in srgb, var(--cardinal) 55%, transparent); }\n.course-card .video { display: inline-flex; align-items: center; gap: 4px; color: var(--cardinal); }\n.course-card .video svg { width: 12px; height: 12px; }\n.clamp3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }\n\n/* Essay grade */\n.essay-score { font-family: var(--serif); font-weight: 600; font-size: 52px; line-height: 1; color: var(--night); }\n.caption.quote { font-style: italic; font-weight: 500; color: rgba(23,23,31,0.58); }\n";
+window.__KSHC_ASSET_REVISIONS = {"ks-hiculture-data-v1.js":"12bcc3493896","ks-hiculture-learning-v1.js":"c38cd032be2d","ks-hiculture-law-bank-v1.js":"1e24338494fa","ks-hiculture-med-bank-v1.js":"7aea9a954dac","ks-hiculture-feed-v1.js":"d7ab4ebc27e6","ks-hiculture-law-library-v1.js":"fdfb64b57739","ks-hiculture-courses-1-v1.js":"1e49a31bed60","ks-hiculture-courses-2-v1.js":"f42527189ad9","ks-hiculture-courses-3-v1.js":"a2b525aeef5b","ks-hiculture-courses-4-v1.js":"9c1ffc28a3d9","ks-hiculture-card-science.jpg":"5b3f109ae8dd","ks-hiculture-card-biotechnology.jpg":"caaee3f0dff4","ks-hiculture-card-botany.jpg":"393963a55692","ks-hiculture-card-medicine.jpg":"9c1e2de9c133","ks-hiculture-card-space.jpg":"cc9542924860","ks-hiculture-card-philosophy.jpg":"835fe5e3805a","ks-hiculture-card-history.jpg":"5c6bef4d69dc","ks-hiculture-card-people.jpg":"094b1ab508ce","ks-hiculture-card-law.jpg":"17e028e0cd5c","ks-hiculture-card-investing.jpg":"3e25415a9a69","ks-hiculture-card-business.jpg":"09a636c398c0","ks-hiculture-card-recipe.jpg":"3b699d71c6c2","ks-hiculture-card-obscure.jpg":"84bdd84c42c9","ks-hiculture-card-literature.jpg":"d40ff6587a85","ks-hiculture-card-art.jpg":"929d42847d1c","ks-hiculture-card-architecture.jpg":"3566a82e21fe","ks-hiculture-card-design.jpg":"a2a729b67e27"};
 
 /* ---- 00-util.js ---- */
 /* ---------- DOM helper ---------- */
@@ -373,7 +373,7 @@ const App = {
   host: null,          // mount element
   assetBase: '',
   feedURL: '',
-  version: '8fbb5dcc4bfe',
+  version: '5d34f0e0d360',
   data: { core: null, learning: null, lawBank: null, medBank: null },
   feed: { items: [], generatedAt: null, state: 'idle', error: null },
   lawLibrary: { data: null, state: 'idle', error: null },
@@ -947,6 +947,15 @@ const LearningProgress = {
     };
     return this.persist();
   },
+  recordEssayGrade(question, grade) {
+    const draft = this.state.essayDrafts[question.id];
+    if (!draft) return false;
+    draft.coaching = {
+      summary: grade.summary, strengths: grade.strengths, nextSteps: grade.nextSteps, sourceChecks: grade.sourceChecks,
+      coachedAt: new Date().toISOString(), coachVersion: grade.version, score: grade.score, band: grade.band.label
+    };
+    return this.persist();
+  },
   hasAttemptedID(questionID) {
     return !!this.state.cardStates[questionID] || !!this.state.essayDrafts[questionID]
       || Object.values(this.state.attempts).some((a) => a.questionID === questionID);
@@ -1412,6 +1421,309 @@ function dailyExam(seed) {
 }
 
 
+/* ---- 45-essay-grader.js ---- */
+/* ---------- On-device essay grader (EssayGrader.swift) ---------- */
+// Grades a draft against the question's rubric with no network and no model.
+// Each rubric criterion carries `keyPoints` (the distinct ideas a good answer
+// states) and `pitfalls` (common wrong claims). The matching rules are the
+// ones documented in tools/essay_keypoint_check.py; EssayGrader.swift is a
+// line-for-line port, and tools/test_essay_grader.mjs checks the two agree.
+const ESSAY_GRADER_VERSION = 'rubric-keypoints-v2';
+
+const ESSAY_BANDS = [
+  { id: 'strong', label: 'Strong', min: 85 },
+  { id: 'proficient', label: 'Proficient', min: 70 },
+  { id: 'developing', label: 'Developing', min: 50 },
+  { id: 'emerging', label: 'Emerging', min: 25 },
+  { id: 'notYet', label: 'Not yet', min: 0 }
+];
+const ESSAY_LEVELS = ['Not yet', 'Emerging', 'Developing', 'Proficient', 'Strong'];
+
+const ESSAY_STOPWORDS = new Set(('a about above after again against all also an and any are as at be because been before being below between both but by can could did do does doing down ' +
+  'during each either even every few for from further had has have having he her here hers him his how however i if in into is it its just may might more most much must my no nor not of off on once one only ' +
+  'or other our out over own rather same she should so some such than that the their them then there these they this those through to too under until up very was we were what when where whether which while who ' +
+  'whom why will with within without would you your yours states state explains explain describes describe identifies identify notes note uses use using gives give makes make shows show').split(' '));
+
+const EssayText = {
+  normalize(text) {
+    return String(text || '')
+      .normalize('NFKD').replace(/[̀-ͯ]/g, '')
+      .toLowerCase()
+      .replace(/[‘’']/g, '')
+      .replace(/[^a-z0-9]+/g, ' ')
+      .trim().replace(/ +/g, ' ');
+  },
+  // Split on newlines, and on whitespace that follows . ! or ?
+  rawSentences(draft) {
+    const out = [];
+    for (const line of String(draft || '').split(/\n+/)) {
+      let start = 0;
+      for (let i = 0; i < line.length; i += 1) {
+        const ch = line[i];
+        if ((ch === '.' || ch === '!' || ch === '?') && i + 1 < line.length && /\s/.test(line[i + 1])) {
+          out.push(line.slice(start, i + 1));
+          let j = i + 1;
+          while (j < line.length && /\s/.test(line[j])) j += 1;
+          start = j;
+          i = j - 1;
+        }
+      }
+      if (start < line.length) out.push(line.slice(start));
+    }
+    return out;
+  },
+  // [{ raw, norm }] for sentences of at least three words.
+  sentences(draft) {
+    const out = [];
+    for (const raw of this.rawSentences(draft)) {
+      const norm = this.normalize(raw);
+      if (norm && norm.split(' ').length >= 3) out.push({ raw: raw.trim(), norm });
+    }
+    return out;
+  },
+  // A window is one sentence, two adjacent sentences, or three adjacent
+  // sentences totalling 50 words or fewer.
+  windows(sents) {
+    const wins = sents.map((s, i) => ({ text: s.norm, first: i }));
+    for (let i = 0; i + 1 < sents.length; i += 1) wins.push({ text: `${sents[i].norm} ${sents[i + 1].norm}`, first: i });
+    for (let i = 0; i + 2 < sents.length; i += 1) {
+      const joined = `${sents[i].norm} ${sents[i + 1].norm} ${sents[i + 2].norm}`;
+      if (joined.split(' ').length <= 50) wins.push({ text: joined, first: i });
+    }
+    return wins;
+  },
+  // The term's words must match consecutive words of the text. The last
+  // word matches as a prefix (exactly, when the term ends with "$"); earlier
+  // words match as prefixes when they have four or more letters.
+  termMatches(term, windowText) {
+    const whole = term.endsWith('$');
+    const normalized = this.normalize(whole ? term.slice(0, -1) : term);
+    if (!normalized) return false;
+    const needle = normalized.split(' ');
+    const text = windowText.split(' ');
+    const last = needle.length - 1;
+    for (let start = 0; start + needle.length <= text.length; start += 1) {
+      let ok = true;
+      for (let offset = 0; offset <= last; offset += 1) {
+        const have = text[start + offset];
+        const word = needle[offset];
+        const hit = offset === last
+          ? (whole ? have === word : have.startsWith(word))
+          : (word.length >= 4 ? have.startsWith(word) : have === word);
+        if (!hit) { ok = false; break; }
+      }
+      if (ok) return true;
+    }
+    return false;
+  },
+  patternMatches(pattern, windowText) {
+    for (const group of pattern.match || []) {
+      if (!group.some((t) => this.termMatches(t, windowText))) return false;
+    }
+    return !(pattern.avoid || []).some((t) => this.termMatches(t, windowText));
+  },
+  // Index of the first window that satisfies the pattern, or -1.
+  firstMatch(pattern, wins) {
+    for (let i = 0; i < wins.length; i += 1) if (this.patternMatches(pattern, wins[i].text)) return i;
+    return -1;
+  },
+  words(text) {
+    const norm = this.normalize(text);
+    return norm ? norm.split(' ') : [];
+  },
+  shingles(wordList, size) {
+    const set = new Set();
+    for (let i = 0; i + size <= wordList.length; i += 1) set.add(wordList.slice(i, i + size).join(' '));
+    return set;
+  }
+};
+
+const ESSAY_REASONING = ['because', 'therefore', 'thus', 'hence', 'consequently', 'as a result', 'which means', 'this means', 'so that', 'since', 'implies', 'it follows', 'leads to', 'that is why', 'for this reason', 'in turn', 'explains why'];
+const ESSAY_SUPPORT = ['for example', 'for instance', 'such as', 'e g', 'according to', 'specifically', 'in particular', 'in the case of', 'consider', 'evidence', 'study', 'data', 'measured', 'experiment'];
+const ESSAY_LIMITS = ['however', 'although', 'though', 'but', 'on the other hand', 'yet', 'while', 'whereas', 'critics', 'objection', 'limitation', 'limits', 'uncertain', 'does not show', 'does not prove', 'may', 'might', 'could', 'unless', 'caveat', 'trade off', 'tradeoff', 'still', 'alternatively', 'nevertheless', 'that said'];
+
+function essayCountCues(normText, cues) {
+  const padded = ` ${normText} `;
+  let n = 0;
+  for (const cue of cues) {
+    let start = 0;
+    for (;;) {
+      const index = padded.indexOf(` ${cue} `, start);
+      if (index < 0) break;
+      n += 1;
+      start = index + cue.length + 1;
+    }
+  }
+  return n;
+}
+
+// Coverage estimate for a criterion that ships without key points (for
+// example a pack from an older server): share of the description's
+// distinctive words that appear in the draft.
+function essayEstimateCoverage(criterion, normDraft) {
+  const stems = new Set();
+  for (const word of EssayText.words(`${criterion.title} ${criterion.description}`)) {
+    if (word.length >= 5 && !ESSAY_STOPWORDS.has(word)) stems.add(word.slice(0, 6));
+  }
+  if (!stems.size) return 0;
+  const padded = ` ${normDraft} `;
+  let hit = 0;
+  for (const stem of stems) if (padded.includes(` ${stem}`)) hit += 1;
+  return Math.min(1, (hit / stems.size) / 0.6);
+}
+
+function essayLevel(coverage) {
+  if (coverage >= 0.85) return 4;
+  if (coverage >= 0.65) return 3;
+  if (coverage >= 0.4) return 2;
+  if (coverage >= 0.15) return 1;
+  return 0;
+}
+
+function essayBand(score) {
+  return ESSAY_BANDS.find((b) => score >= b.min) || ESSAY_BANDS[ESSAY_BANDS.length - 1];
+}
+
+function essayQuote(raw) {
+  const text = raw.replace(/\s+/g, ' ').trim();
+  return text.length > 180 ? `${text.slice(0, 177).trimEnd()}…` : text;
+}
+
+function gradeEssay(question, draft) {
+  const allSents = EssayText.sentences(draft);
+  const draftWords = EssayText.words(draft);
+  const wordTotal = draftWords.length;
+
+  // Sentences lifted from the prompt or its planning questions earn nothing:
+  // drop any sentence of 8+ words whose four-word runs mostly come straight
+  // from that text.
+  const promptShingles = new Set();
+  for (const source of [question.prompt].concat(question.coachingPrompts || [])) {
+    for (const sh of EssayText.shingles(EssayText.words(source), 4)) promptShingles.add(sh);
+  }
+  let copied = 0;
+  const sents = allSents.filter((s) => {
+    const list = s.norm.split(' ');
+    if (list.length < 8) return true;
+    const own = EssayText.shingles(list, 4);
+    let shared = 0;
+    for (const sh of own) if (promptShingles.has(sh)) shared += 1;
+    if (own.size && shared / own.size >= 0.6) { copied += 1; return false; }
+    return true;
+  });
+  const wins = EssayText.windows(sents);
+  const normDraft = sents.map((s) => s.norm).join(' ');
+
+  const rubric = question.rubric || [];
+  const weightTotal = rubric.reduce((n, c) => n + (c.weight || 0), 0) || 1;
+  let weighted = 0;
+  let pointsCovered = 0;
+  let pointsTotal = 0;
+
+  const criteria = rubric.map((criterion) => {
+    const points = criterion.keyPoints || [];
+    const covered = [];
+    const missing = [];
+    let coverage;
+    const estimated = points.length === 0;
+    if (estimated) {
+      coverage = essayEstimateCoverage(criterion, normDraft);
+    } else {
+      let got = 0;
+      let total = 0;
+      for (const point of points) {
+        const w = point.weight || 1;
+        total += w;
+        const at = EssayText.firstMatch(point, wins);
+        if (at >= 0) {
+          got += w;
+          covered.push({ id: point.id, label: point.label, evidence: essayQuote(sents[wins[at].first].raw), weight: w });
+        } else {
+          missing.push({ id: point.id, label: point.label, hint: point.hint, weight: w });
+        }
+      }
+      coverage = total ? got / total : 0;
+      pointsCovered += covered.length;
+      pointsTotal += points.length;
+    }
+    const pitfalls = [];
+    for (const pitfall of criterion.pitfalls || []) {
+      const at = EssayText.firstMatch(pitfall, wins);
+      if (at >= 0) pitfalls.push({ note: pitfall.note, evidence: essayQuote(sents[wins[at].first].raw) });
+    }
+    const penalty = Math.min(0.4, 0.2 * pitfalls.length);
+    const adjusted = Math.max(0, coverage - penalty);
+    weighted += adjusted * (criterion.weight || 0) / weightTotal;
+    const level = essayLevel(adjusted);
+    return {
+      id: criterion.id, title: criterion.title, weight: criterion.weight || 0,
+      coverage: adjusted, percent: Math.round(adjusted * 100), level, levelLabel: ESSAY_LEVELS[level], estimated,
+      covered, missing, pitfalls,
+      question: (criterion.coachingQuestions && criterion.coachingQuestions[0]) || ''
+    };
+  });
+
+  const score = Math.round(weighted * 100);
+  const band = essayBand(score);
+
+  // Writing checks: reported next to the rubric score, not folded into it.
+  const sentenceCount = sents.length;
+  const avgSentence = sentenceCount ? Math.round(sents.reduce((n, s) => n + s.norm.split(' ').length, 0) / sentenceCount) : 0;
+  const reasoning = essayCountCues(normDraft, ESSAY_REASONING);
+  const support = essayCountCues(normDraft, ESSAY_SUPPORT) + (String(draft).match(/\d+/g) || []).length;
+  const limits = essayCountCues(normDraft, ESSAY_LIMITS);
+  const paragraphs = String(draft).split(/\n\s*\n|\n/).filter((p) => p.trim().length > 0).length;
+  const openingWins = EssayText.windows(sents.slice(0, 2));
+  const opensOnPoint = rubric.some((c) => (c.keyPoints || []).some((p) => EssayText.firstMatch(p, openingWins) >= 0));
+  const per100 = (n) => (wordTotal ? n / (wordTotal / 100) : 0);
+  const checks = [
+    { id: 'length', label: 'Length', ok: wordTotal >= 150 && wordTotal <= 600,
+      detail: wordTotal < 150 ? `${wordTotal} words. Complete answers to this prompt usually need 200–400.` : wordTotal > 600 ? `${wordTotal} words. Tighten toward 400 so the main line of reasoning stands out.` : `${wordTotal} words, enough room to cover the rubric.` },
+    { id: 'opening', label: 'Gets to the point', ok: opensOnPoint,
+      detail: opensOnPoint ? 'Your opening sentences already engage a rubric idea.' : 'Open with your answer to the prompt, then support it. The first two sentences do not yet touch a rubric idea.' },
+    { id: 'reasoning', label: 'Shows reasoning', ok: per100(reasoning) >= 1,
+      detail: per100(reasoning) >= 1 ? `${reasoning} linking phrases (because, therefore, which means…) connect claims to reasons.` : 'Few linking phrases (because, therefore, which means). Say why each claim follows, not only that it is so.' },
+    { id: 'support', label: 'Specific support', ok: support >= 2,
+      detail: support >= 2 ? 'Includes concrete specifics (examples, figures or named evidence).' : 'Add at least one concrete example, figure or named piece of evidence.' },
+    { id: 'limits', label: 'Weighs limits or other views', ok: limits >= 2,
+      detail: limits >= 2 ? 'Qualifies claims or considers another side.' : 'State a limit, exception or opposing view and answer it.' },
+    { id: 'organization', label: 'Organization', ok: sentenceCount >= 5 && avgSentence <= 32 && (paragraphs >= 2 || wordTotal < 220),
+      detail: sentenceCount < 5 ? 'Only a few sentences. Develop each idea in its own sentence.' : avgSentence > 32 ? `Sentences average ${avgSentence} words. Split the longest ones.` : (paragraphs < 2 && wordTotal >= 220) ? 'One long block. Break it into paragraphs, one job each.' : 'Sentences and paragraphs are a readable length.' }
+  ];
+  if (copied > 0) {
+    checks.push({ id: 'ownWords', label: 'Your own words', ok: false,
+      detail: `${copied} ${copied === 1 ? 'sentence repeats' : 'sentences repeat'} the prompt and earned no credit. Answer it instead of restating it.` });
+  }
+
+  const strengths = [];
+  for (const c of criteria) {
+    if (c.level >= 3) strengths.push(c.estimated ? `${c.title}: well covered.` : `${c.title}: ${c.covered.length} of ${c.covered.length + c.missing.length} key points covered.`);
+  }
+  for (const check of checks) if (check.ok && strengths.length < 4 && ['reasoning', 'support', 'limits'].includes(check.id)) strengths.push(check.detail);
+  if (!strengths.length) strengths.push(`You have a ${wordTotal}-word draft to build on.`);
+
+  const nextSteps = [];
+  for (const c of criteria) for (const p of c.pitfalls) nextSteps.push(p.note);
+  const gaps = [];
+  for (const c of criteria) for (const m of c.missing) gaps.push({ rank: c.weight * m.weight, hint: m.hint });
+  gaps.sort((a, b) => b.rank - a.rank);
+  for (const gap of gaps) if (nextSteps.length < 5 && gap.hint) nextSteps.push(gap.hint);
+  for (const c of criteria) if (c.estimated && c.level < 3 && nextSteps.length < 5 && c.question) nextSteps.push(c.question);
+  for (const check of checks) if (!check.ok && nextSteps.length < 6) nextSteps.push(check.detail);
+
+  const summary = pointsTotal
+    ? `Rubric score ${score} of 100 (${band.label}). Your draft covers ${pointsCovered} of ${pointsTotal} key points across ${criteria.length} rubric criteria.`
+    : `Rubric score ${score} of 100 (${band.label}), estimated from the rubric descriptions.`;
+
+  return {
+    version: ESSAY_GRADER_VERSION, score, band, words: wordTotal, pointsCovered, pointsTotal,
+    criteria, checks, strengths, nextSteps, summary,
+    sourceChecks: (question.sources || []).map((src) => `Check claims attributed to ${src.publisher} against “${src.title}” before treating them as settled.`),
+    disclaimer: 'Scored on this device by matching your draft to the rubric’s key points. It can miss an idea phrased in an unusual way, so treat the score as a guide and confirm facts in the linked sources.'
+  };
+}
+
+
 /* ---- 50-ui.js ---- */
 /* ---------- Router ---------- */
 // Routes live in the URL hash so the browser back button works:
@@ -1637,33 +1949,6 @@ function dueCountFor(category) {
   return due;
 }
 
-function curriculumBanner() {
-  let iconName = 'books';
-  let title = 'Built-in curriculum';
-  let detail = 'Source-backed practice is ready. Current reading loads in a moment.';
-  let accent = THEME.stone;
-  if (App.feed.items.length && App.feed.snapshot) {
-    iconName = 'shield'; title = 'Verified curriculum · recent reading'; accent = THEME.leaf;
-    detail = App.feed.generatedAt ? `Reading collected ${formatDate(App.feed.generatedAt)}.` : 'Reading feed loaded.';
-  } else if (App.feedURL) {
-    if (App.feed.state === 'loading' && !App.feed.items.length) {
-      iconName = 'refresh'; title = 'Checking today’s reading'; accent = THEME.tideTeal;
-      detail = 'Practice is ready while the nightly reading feed loads.';
-    } else if (App.feed.items.length) {
-      iconName = 'shield'; title = 'Verified curriculum · live reading';
-      accent = App.feed.state === 'failed' ? THEME.sunsetGold : THEME.leaf;
-      detail = App.feed.generatedAt
-        ? `Reading refreshed ${formatDate(App.feed.generatedAt, true)}.${App.feed.state === 'failed' ? ' Showing the last saved copy.' : ''}`
-        : 'Reading feed loaded.';
-    } else if (App.feed.state === 'failed') {
-      iconName = 'warning'; title = 'Nightly reading unavailable'; accent = THEME.sunsetGold;
-      detail = 'Using built-in sources. Practice and private drafts still work.';
-    }
-  }
-  return h('div.banner', { style: { '--accent': accent } }, icon(iconName),
-    h('div.stack.xtight', { style: { gap: '2px' } }, h('p.caption', { style: { color: 'var(--night)' } }, title), h('p.caption', detail)));
-}
-
 function homeGrid(categories) {
   const base = Object.fromEntries(categories.map((c, i) => [c, i]));
   const due = Object.fromEntries(categories.map((c) => [c, dueCountFor(c)]));
@@ -1694,10 +1979,6 @@ function homeGrid(categories) {
 function renderToday() {
   const categories = visibleCategories();
   return h('div.stack',
-    h('div.stack.xtight',
-      h('h1.hero-title', 'Learn something worth keeping'),
-      h('p.body', 'Daily college-level questions, source-backed explanations, and coaching that adapts as you practice.')),
-    curriculumBanner(),
     h('a.tap', { href: '#/worldly' },
       card(THEME.sunsetGold,
         h('div.row.top', { style: { gap: '12px' } },
@@ -1764,7 +2045,7 @@ function renderSubjectHub(category, sourceItems, opts = {}) {
     h('div.stack.tight',
       sectionHeader('Practice', 'Choose the kind of thinking you want to train'),
       modeRow({ iconName: 'checklist', title: 'Multiple Choice', subtitle: 'Commit an answer, then study every rationale', detail: `${mcqCount}-question adaptive round`, accent: THEME.tideTeal, href: `/session/${category}?mode=practice`, disabled: !mcqCount }),
-      essay ? modeRow({ iconName: 'pencil', title: 'Essay Workshop', subtitle: 'Build an argument with rubric-guided coaching', detail: LearningProgress.essayDraft(essay.id) ? 'Continue draft' : 'Private draft', accent: THEME.sunsetGold, href: `/essay/${encodeURIComponent(essay.id)}` }) : null),
+      essay ? modeRow({ iconName: 'pencil', title: 'Essay Workshop', subtitle: 'Write an argument and get it graded against a rubric', detail: essayWorkshopDetail(category), accent: THEME.sunsetGold, href: `/essays/${category}` }) : null),
     card(accent,
       h('div.row.between', h('h2.section-title', 'Knowledge Profile'), mastery.attemptedCount && mastery.weakestDimension ? h('span.caption', { style: { color: accent } }, `Focus: ${DIMENSION_LABEL[mastery.weakestDimension]}`) : null),
       h('p.caption', 'Mastery stays separated by the kind of thinking involved. Recognition alone does not stand in for deeper understanding.'),
@@ -1855,7 +2136,7 @@ function renderLearningSession({ category, mode = 'daily' }) {
     const ready = s.essaysDone.has(q.id) || words >= 40;
     body = h('div.stack.tight',
       h('p.caption', { style: { color: cat(q.category).accent } }, 'Synthesis prompt'),
-      h('p.body', 'Write privately, then use the rubric to strengthen the reasoning. HiCulture provides coaching, not a grade.'),
+      h('p.body', 'Write privately, then get a rubric grade on this device and revise.'),
       h('a.tap', { href: `#/essay/${encodeURIComponent(q.id)}` },
         h('div.tile.row', { style: { '--accent': cat(q.category).accent, background: `color-mix(in srgb, ${cat(q.category).accent} 13%, transparent)` } },
           icon('pencil'), h('span.subhead.grow', { style: { color: 'var(--night)' } }, words ? 'Continue Draft' : 'Open Writing Studio'),
@@ -1912,20 +2193,80 @@ function answerFeedback(q, selectedID, choices) {
 }
 
 /* ---------- Essay workshop ---------- */
-function localCoaching(q, draft) {
-  const words = wordCount(draft);
-  const strengths = [`You have a substantive ${words}-word draft to revise rather than a blank page.`];
-  if (words >= 150) strengths.push('The response is long enough to examine structure, evidence, and counterargument separately.');
-  let nextSteps = q.rubric.slice(0, 3).map((c) => c.coachingQuestions[0] || `Revise for ${c.title.toLowerCase()}: ${c.description}`);
-  if (!nextSteps.length) nextSteps = q.coachingPrompts.slice(0, 3);
-  if (!nextSteps.length) nextSteps = ['State the central claim in one precise sentence.', 'Connect each major claim to evidence from an official source.', 'Address the strongest reasonable counterargument.'];
-  return {
-    summary: 'This is formative guidance from an on-device rubric check. It does not score, grade, or certify the response.',
-    strengths, nextSteps,
-    criteria: q.rubric.map((c) => ({ title: c.title, feedback: `Re-read your draft specifically for ${c.title.toLowerCase()}. ${c.description}`, question: c.coachingQuestions[0] || 'What concrete revision would make this part of the reasoning clearer?' })),
-    sourceChecks: q.sources.map((src) => `Check claims attributed to ${src.publisher} against “${src.title}” before treating them as settled.`),
-    disclaimer: 'Local rubric guidance only. Confirm factual and legal claims in the linked sources.'
+const ESSAY_LEVEL_COLORS = [THEME.ember, THEME.copper, THEME.sunsetGold, THEME.tideTeal, THEME.leaf];
+
+function essayGradeCard(q, grade, accent) {
+  const scoreColor = ESSAY_LEVEL_COLORS[essayLevel(grade.score / 100)];
+  const criterionBlock = (c) => {
+    const color = ESSAY_LEVEL_COLORS[c.level];
+    return h('div.inset.stack.xtight', { style: { gap: '8px' } },
+      h('div.row.between', { style: { alignItems: 'baseline', gap: '8px' } },
+        h('span.subhead', { style: { color: 'var(--night)' } }, c.title),
+        h('span.caption', { style: { color, whiteSpace: 'nowrap' } }, `${c.levelLabel} · ${c.percent}%`)),
+      progressBar(c.coverage, color, true),
+      c.pitfalls.map((p) => h('div.stack.xtight', { style: { gap: '2px' } },
+        h('p.caption', { style: { color: THEME.ember, display: 'flex', gap: '6px' } }, icon('warning'), h('span', p.note)),
+        h('p.caption.quote', `“${p.evidence}”`))),
+      c.missing.map((m) => h('div.stack.xtight', { style: { gap: '2px' } },
+        h('p.caption', { style: { color: 'rgba(23,23,31,0.82)' } }, `○ Not found: ${m.label}`),
+        h('p.caption', { style: { fontWeight: 500, paddingLeft: '18px' } }, m.hint))),
+      c.covered.length ? disclosure(`Covered: ${c.covered.length} of ${c.covered.length + c.missing.length}`,
+        c.covered.map((p) => h('div.stack.xtight', { style: { gap: '2px', marginTop: '6px' } },
+          h('p.caption', { style: { color: 'rgba(23,23,31,0.82)' } }, `✓ ${p.label}`),
+          h('p.caption.quote', { style: { paddingLeft: '18px' } }, `“${p.evidence}”`)))) : null,
+      (c.estimated && c.question) ? h('p.caption', { style: { fontStyle: 'italic', fontWeight: 500 } }, c.question) : null);
   };
+  return card(THEME.leaf,
+    h('div.row.between', h('h2.section-title', 'Rubric Grade'), h('span.tag', 'On device')),
+    h('div.row.between', { style: { alignItems: 'baseline' }, role: 'group', 'aria-label': `Rubric score ${grade.score} out of 100, ${grade.band.label}` },
+      h('div', { style: { display: 'flex', alignItems: 'baseline', gap: '6px' } },
+        h('span.essay-score', String(grade.score)), h('span.subhead', '/ 100')),
+      h('span.card-title', { style: { color: scoreColor } }, grade.band.label)),
+    progressBar(grade.score / 100, scoreColor, true),
+    h('p.body', grade.pointsTotal
+      ? `Your draft covers ${grade.pointsCovered} of ${grade.pointsTotal} key points across ${grade.criteria.length} rubric criteria.`
+      : 'Estimated from the rubric descriptions.'),
+    h('div.stack.tight', h('p.subhead', { style: { color: 'var(--night)' } }, 'By Criterion'), grade.criteria.map(criterionBlock)),
+    coachingList('Next revision', grade.nextSteps, THEME.sunsetGold),
+    coachingList('What is working', grade.strengths, THEME.leaf),
+    h('div.stack.xtight', h('p.subhead', { style: { color: 'var(--night)' } }, 'Writing Checks'),
+      h('p.caption', 'These describe the writing itself and do not change the rubric score.'),
+      grade.checks.map((check) => h('div', { style: { display: 'flex', gap: '8px', alignItems: 'flex-start' } },
+        h('span', { style: { color: check.ok ? THEME.leaf : THEME.sunsetGold, flex: 'none', fontWeight: 700 }, 'aria-hidden': 'true' }, check.ok ? '✓' : '!'),
+        h('div.stack.xtight', { style: { gap: '1px' } }, h('p.caption', { style: { color: 'var(--night)' } }, check.label), h('p.caption', { style: { fontWeight: 500 } }, check.detail))))),
+    coachingList('Source checks', grade.sourceChecks, THEME.tideTeal),
+    h('p.caption', grade.disclaimer),
+    q.modelOutline.length ? disclosure('Compare your structure', q.modelOutline.map((p) => h('div.list-dot', { style: { '--accent': accent } }, p))) : null);
+}
+
+function essayWorkshopDetail(category) {
+  const essays = Learning.questions(category).filter((q) => q.type === 'essay');
+  const started = essays.filter((q) => LearningProgress.essayDraft(q.id)).length;
+  const prompts = plural(essays.length, 'prompt', 'prompts');
+  return started ? `${prompts} · ${started} started` : prompts;
+}
+
+// Every essay prompt in a subject with its draft and grade status.
+function renderEssayList({ category }) {
+  if (!isLearningSubject(category)) return renderNotFound();
+  const accent = cat(category).accent;
+  const essays = Learning.questions(category).filter((q) => q.type === 'essay');
+  const status = (q) => {
+    const draft = LearningProgress.essayDraft(q.id);
+    if (!draft) return ['Not started', 'rgba(23,23,31,0.55)'];
+    const words = wordCount(draft.response);
+    if (draft.coaching && typeof draft.coaching.score === 'number') return [`Last grade ${draft.coaching.score} · ${draft.coaching.band || essayBand(draft.coaching.score).label} · ${words} words`, accent];
+    return [words ? `Draft · ${words} words` : 'Not started', THEME.sunsetGold];
+  };
+  return h('div.stack',
+    h('div.stack.xtight', h('h1.hero-title', 'Essay Workshop'), h('p.body', `${cat(category).label} · choose a prompt. Drafts and grades stay in this browser.`)),
+    essays.length ? essays.map((q) => {
+      const [text, color] = status(q);
+      return h('a.tap', { href: `#/essay/${encodeURIComponent(q.id)}` }, card(accent,
+        h('h3.card-title', q.conceptTitle),
+        h('p.subhead.clamp3', q.prompt),
+        h('span.caption', { style: { color } }, text)));
+    }) : emptyCard(THEME.stone, 'No essay prompts yet', 'This subject has multiple-choice practice only.'));
 }
 
 function renderEssay({ id }) {
@@ -1940,8 +2281,14 @@ function renderEssay({ id }) {
   const feedbackBtnHolder = h('div');
   const renderFeedbackButton = () => {
     feedbackBtnHolder.replaceChildren(
-      button('Use On-Device Rubric', { accent, block: true, disabled: wordCount(s.draft) < 40, onClick: () => { save.flush(); LearningProgress.saveEssayDraft(q, s.draft); s.feedback = localCoaching(q, s.draft); App.refresh(); } }),
-      wordCount(s.draft) < 40 ? h('p.caption', { style: { marginTop: '8px' } }, 'Write at least 40 words before requesting feedback.') : null);
+      button(s.feedback ? 'Grade Again' : 'Grade My Draft', { accent, block: true, disabled: wordCount(s.draft) < 40, onClick: () => {
+        save.flush();
+        LearningProgress.saveEssayDraft(q, s.draft);
+        s.feedback = gradeEssay(q, s.draft);
+        LearningProgress.recordEssayGrade(q, s.feedback);
+        App.refresh();
+      } }),
+      h('p.caption', { style: { marginTop: '8px' } }, wordCount(s.draft) < 40 ? 'Write at least 40 words before requesting feedback.' : 'Graded in this browser against the rubric. Nothing is sent anywhere.'));
   };
   renderFeedbackButton();
   const textarea = h('textarea.textarea', {
@@ -1953,9 +2300,10 @@ function renderEssay({ id }) {
   App.onLeave = () => { save.flush(); };
 
   const fb = s.feedback;
+  const saved = LearningProgress.essayDraft(id);
   return h('div.stack',
     h('div.stack.xtight', h('h1.hero-title', 'Essay Workshop'), h('p.subhead', `${cat(q.category).label} · ${q.conceptTitle}`),
-      h('p.body', 'Private drafting and formative coaching. No grade, ranking, or answer is published.')),
+      h('p.body', 'Draft privately, then get a rubric grade on this device. Nothing is published.')),
     card(accent,
       h('div.row.between', h('h2.section-title', 'Prompt'), h('span.tag', DIFFICULTY_LABEL[q.difficulty])),
       h('p.card-title', q.prompt),
@@ -1969,16 +2317,12 @@ function renderEssay({ id }) {
       textarea,
       h('p.caption', { style: { display: 'flex', gap: '6px', alignItems: 'center' } }, icon('lock'), 'Saved privately in this browser. Nothing is published.'),
       feedbackBtnHolder),
-    fb ? card(THEME.leaf,
-      h('div.row.between', h('h2.section-title', 'Coaching Notes'), h('span.tag', 'On device')),
-      h('p.body', fb.summary),
-      coachingList('What is working', fb.strengths, THEME.leaf),
-      coachingList('Next revision', fb.nextSteps, THEME.sunsetGold),
-      fb.criteria.length ? h('div.stack.tight', h('p.subhead', { style: { color: 'var(--night)' } }, 'Rubric Walkthrough'),
-        fb.criteria.map((c) => h('div.inset.stack.xtight', h('p.caption', { style: { color: accent } }, c.title), h('p.subhead', c.feedback), h('p.caption', { style: { fontStyle: 'italic', fontWeight: 500 } }, c.question)))) : null,
-      coachingList('Source checks', fb.sourceChecks, THEME.tideTeal),
-      h('p.caption', fb.disclaimer),
-      q.modelOutline.length ? disclosure('Compare your structure', q.modelOutline.map((p) => h('div.list-dot', { style: { '--accent': accent } }, p))) : null) : null);
+    fb ? essayGradeCard(q, fb, accent)
+      : (saved && saved.coaching && typeof saved.coaching.score === 'number'
+        ? card(THEME.leaf, h('div.row.between', h('h2.section-title', 'Last Grade'), h('span.tag', 'On device')),
+          h('p.body', saved.coaching.summary),
+          h('p.caption', 'Tap Grade My Draft to see the full breakdown for the current draft.'))
+        : null));
 }
 
 function coachingList(title, items, accent) {
@@ -2009,7 +2353,7 @@ function renderWorldly() {
     h('div.stack.tight', sectionHeader('Challenge Modes', 'Switch the mental move, keep the scholarship'),
       modeRow({ iconName: 'bubble', title: 'High-Level Trivia', subtitle: 'Mixed retrieval with explanations and citations', detail: `${challenge.questions.length} questions`, accent: THEME.sapphire, href: '/session/trivia?mode=worldly', disabled: !startable }),
       modeRow({ iconName: 'connect', title: 'Connection Puzzle', subtitle: 'Application and synthesis across fields', detail: `${connection.length} prompts`, accent: THEME.terraRose, href: '/session/trivia?mode=connection', disabled: !connection.length }),
-      essay ? modeRow({ iconName: 'essay', title: 'Cross-Field Essay', subtitle: 'Make and support an argument without a grade', detail: cat(essay.category).label, accent: THEME.sunsetGold, href: `/essay/${encodeURIComponent(essay.id)}` }) : null),
+      essay ? modeRow({ iconName: 'essay', title: 'Cross-Field Essay', subtitle: 'Make and support an argument, graded against a rubric', detail: cat(essay.category).label, accent: THEME.sunsetGold, href: `/essay/${encodeURIComponent(essay.id)}` }) : null),
     card(THEME.sapphire,
       h('div.row.between', h('h2.section-title', 'Worldliness Profile'), h('span.caption', { style: { color: THEME.sapphire } }, `${mastery.conceptCount} concepts`)),
       h('p.body', mastery.attemptedCount ? `${mastery.attemptedCount} attempts · ${percent(mastery.accuracy)} accuracy` : 'Your profile will develop as you answer across subjects.'),
@@ -2904,6 +3248,7 @@ function registerRoutes() {
   Router.add('/today', renderToday, { tab: 'today', homeBackground: true, showSettings: true });
   Router.add('/c/:category', renderCategory, { tab: 'today', back: true, title: (a) => cat(a.category).label, showSettings: false });
   Router.add('/session/:category', renderLearningSession, { tab: 'today', back: true, title: () => '' });
+  Router.add('/essays/:category', renderEssayList, { tab: 'today', back: true, title: (a) => cat(a.category).label });
   Router.add('/essay/:id', renderEssay, { tab: 'today', back: true });
   Router.add('/worldly', renderWorldly, { tab: 'today', back: true });
   Router.add('/progress', renderProgress, { tab: 'progress' });
