@@ -1,0 +1,62 @@
+name: Refresh HiCulture feeds
+
+on:
+  schedule:
+    # 10:17 UTC daily = 3:17 am Pacific Daylight Time (2:17 am in winter).
+    - cron: "17 10 * * *"
+  workflow_dispatch:
+    inputs:
+      force_law_refresh:
+        description: "Refetch every statute and rule now (normally weekly)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: refresh-hiculture-feeds
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Refresh RSS feeds (docs/feed.json)
+        id: feeds
+        continue-on-error: true
+        run: node scripts/refresh.mjs
+
+      - name: Refresh Law Library (docs/law-library.json)
+        id: law
+        continue-on-error: true
+        env:
+          FORCE_LAW_REFRESH: ${{ inputs.force_law_refresh && '1' || '0' }}
+        run: node scripts/law-library.mjs
+
+      - name: Commit and push docs/ if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add docs
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+            exit 0
+          fi
+          git commit -m "Nightly feed refresh $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push || (git pull --rebase origin "$GITHUB_REF_NAME" && git push)
+
+      - name: Flag script failures
+        if: steps.feeds.outcome == 'failure' || steps.law.outcome == 'failure'
+        run: |
+          echo "::error::A refresh script failed (feeds: ${{ steps.feeds.outcome }}, law: ${{ steps.law.outcome }}). Any data that did refresh was still committed; see the step logs above."
+          exit 1
