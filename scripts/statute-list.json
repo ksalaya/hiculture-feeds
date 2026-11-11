@@ -1,0 +1,905 @@
+{
+ "_comment": "California code sections prefetched weekly into docs/law-library.json. 'core' = curated high-yield list; 'mcq-bank' = every leginfo section referenced by HiCulture/Resources/hiculture_law_mcq_bank_v2.json (generated 2026-10-21). lawCode values are leginfo codes (PEN, EVID, FAM, PROB, CCP, CIV, BPC, CORP, LAB, GOV, ...). Add or remove entries freely.",
+ "statutes": [
+  {
+   "lawCode": "PEN",
+   "section": "187",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "188",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "189",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "190",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "192",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "193",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "203",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "207",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "211",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "215",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "240",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "242",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "243",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "245",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "261",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "273.5",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "422",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "451",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "459",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "459.5",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "470",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "484",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "487",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "490.2",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "496",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "664",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "182",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "31",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "25",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "26",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "28",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "29.4",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "654",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "667",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "1170",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "1172.6",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "1001.36",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "745",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "859b",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "872",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "995",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "1538.5",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "1192.7",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "1203.4",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "1385",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "148",
+   "source": "core"
+  },
+  {
+   "lawCode": "PEN",
+   "section": "653f",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "210",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "350",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "351",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "352",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "403",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "405",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "452",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "520",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "700",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "702",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "720",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "721",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "780",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "785",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "787",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "788",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "791",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "800",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "801",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "802",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1101",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1103",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1108",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1109",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1150",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1152",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1153",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1154",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1155",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1200",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1220",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1221",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1222",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1223",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1230",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1235",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1236",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1237",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1240",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1250",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1271",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1280",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1291",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1341",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1500",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1521",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1043",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1045",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "912",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "917",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "954",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "956",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "980",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "990",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "994",
+   "source": "core"
+  },
+  {
+   "lawCode": "EVID",
+   "section": "1014",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "760",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "770",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "771",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "852",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "1100",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "1101",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "1615",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "2550",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "2581",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "2640",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "2641",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "2603",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "910",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "2625",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "125",
+   "source": "core"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "70",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6110",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6111",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6112",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6122",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6240",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6300",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6401",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6402",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6403",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "15400",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "15403",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "21110",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "21311",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "21380",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "21610",
+   "source": "core"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "21620",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "335.1",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "337",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "339",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "340",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "410.10",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "425.16",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "430.10",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "437c",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "998",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "128.7",
+   "source": "core"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "1550",
+   "source": "core"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "1565",
+   "source": "core"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "1624",
+   "source": "core"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "1671",
+   "source": "core"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "3294",
+   "source": "core"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "3333",
+   "source": "core"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "3343",
+   "source": "core"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "3391",
+   "source": "core"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "1714",
+   "source": "core"
+  },
+  {
+   "lawCode": "BPC",
+   "section": "6068",
+   "source": "core"
+  },
+  {
+   "lawCode": "BPC",
+   "section": "6103.5",
+   "source": "core"
+  },
+  {
+   "lawCode": "BPC",
+   "section": "6147",
+   "source": "core"
+  },
+  {
+   "lawCode": "BPC",
+   "section": "6148",
+   "source": "core"
+  },
+  {
+   "lawCode": "CORP",
+   "section": "300",
+   "source": "core"
+  },
+  {
+   "lawCode": "CORP",
+   "section": "309",
+   "source": "core"
+  },
+  {
+   "lawCode": "CORP",
+   "section": "310",
+   "source": "core"
+  },
+  {
+   "lawCode": "CORP",
+   "section": "800",
+   "source": "core"
+  },
+  {
+   "lawCode": "LAB",
+   "section": "2922",
+   "source": "core"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "430.30",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "425.10",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "1431.2",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "GOV",
+   "section": "818",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "415.20",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "CCP",
+   "section": "426.30",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "BPC",
+   "section": "17203",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "101",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "FAM",
+   "section": "2251",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "6120",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "21621",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "PROB",
+   "section": "16004",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "2317",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "CORP",
+   "section": "16306",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "CORP",
+   "section": "17704.09",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "2224",
+   "source": "mcq-bank"
+  },
+  {
+   "lawCode": "CIV",
+   "section": "3399",
+   "source": "mcq-bank"
+  }
+ ]
+}
