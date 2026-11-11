@@ -1,0 +1,785 @@
+{
+  "generatedAt": "2026-11-11T02:15:49.411Z",
+  "durationSeconds": 59.2,
+  "lawLibraryJsonBytes": 252770,
+  "updates": [
+    {
+      "id": "published-opinions",
+      "ok": true,
+      "count": 48
+    },
+    {
+      "id": "rules-updates",
+      "ok": true,
+      "count": 10
+    },
+    {
+      "id": "newsroom-updates",
+      "ok": true,
+      "count": 8
+    }
+  ],
+  "juryInstructions": [
+    {
+      "id": "civil",
+      "ok": true,
+      "count": 13
+    },
+    {
+      "id": "criminal",
+      "ok": true,
+      "count": 17
+    }
+  ],
+  "statutes": {
+    "listed": 180,
+    "due": 180,
+    "ok": 0,
+    "failed": 3,
+    "skipped": 177,
+    "keptPrevious": 0,
+    "notDue": 0,
+    "userAgent": {
+      "app": 0,
+      "browser": 0
+    },
+    "blocked": "leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+  },
+  "rules": {
+    "listed": 39,
+    "due": 39,
+    "ok": 39,
+    "failed": 0,
+    "skipped": 0,
+    "keptPrevious": 0,
+    "notDue": 0,
+    "userAgent": {
+      "app": 39,
+      "browser": 0
+    },
+    "blocked": null
+  },
+  "statuteFailures": [
+    {
+      "key": "PEN-187",
+      "error": "HTTP 403 Cloudflare bot challenge (app and browser User-Agents)"
+    },
+    {
+      "key": "PEN-188",
+      "error": "HTTP 403 Cloudflare bot challenge (app and browser User-Agents)"
+    },
+    {
+      "key": "PEN-189",
+      "error": "HTTP 403 Cloudflare bot challenge (app and browser User-Agents)"
+    },
+    {
+      "key": "PEN-190",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-192",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-193",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-203",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-207",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-211",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-215",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-240",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-242",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-243",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-245",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-261",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-273.5",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-422",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-451",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-459",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-459.5",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-470",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-484",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-487",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-490.2",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-496",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-664",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-182",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-31",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-25",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-26",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-28",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-29.4",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-654",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-667",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-1170",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-1172.6",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-1001.36",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-745",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-859b",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-872",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-995",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-1538.5",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-1192.7",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-1203.4",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-1385",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-148",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PEN-653f",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-210",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-350",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-351",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-352",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-403",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-405",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-452",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-520",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-700",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-702",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-720",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-721",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-780",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-785",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-787",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-788",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-791",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-800",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-801",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-802",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1101",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1103",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1108",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1109",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1150",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1152",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1153",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1154",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1155",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1200",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1220",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1221",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1222",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1223",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1230",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1235",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1236",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1237",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1240",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1250",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1271",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1280",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1291",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1341",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1500",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1521",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1043",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1045",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-912",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-917",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-954",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-956",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-980",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-990",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-994",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "EVID-1014",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-760",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-770",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-771",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-852",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-1100",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-1101",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-1615",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-2550",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-2581",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-2640",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-2641",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-2603",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-910",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-2625",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-125",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-70",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6110",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6111",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6112",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6122",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6240",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6300",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6401",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6402",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6403",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-15400",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-15403",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-21110",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-21311",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-21380",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-21610",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-21620",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-335.1",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-337",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-339",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-340",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-410.10",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-425.16",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-430.10",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-437c",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-998",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-128.7",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-1550",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-1565",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-1624",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-1671",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-3294",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-3333",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-3343",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-3391",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-1714",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "BPC-6068",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "BPC-6103.5",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "BPC-6147",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "BPC-6148",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CORP-300",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CORP-309",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CORP-310",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CORP-800",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "LAB-2922",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-430.30",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-425.10",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-1431.2",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "GOV-818",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-415.20",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CCP-426.30",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "BPC-17203",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-101",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "FAM-2251",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-6120",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-21621",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "PROB-16004",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-2317",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CORP-16306",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CORP-17704.09",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-2224",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    },
+    {
+      "key": "CIV-3399",
+      "error": "skipped: leginfo.legislature.ca.gov host is blocking automated requests (HTTP 403 Cloudflare bot challenge (app and browser User-Agents)); stopped after 3 blocks in a row"
+    }
+  ],
+  "ruleFailures": []
+}

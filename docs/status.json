@@ -1,0 +1,37 @@
+{
+  "generatedAt": "2026-11-11T02:39:57.267Z",
+  "durationSeconds": 21.3,
+  "feedsTotal": 168,
+  "feedsOk": 165,
+  "feedsFailed": 3,
+  "itemsTotal": 2484,
+  "itemsCarriedForward": 10,
+  "droppedDuplicates": 340,
+  "droppedLowTrust": 0,
+  "droppedOlderThan120Days": 267,
+  "perSourceCap": 30,
+  "feedJsonBytes": 1773171,
+  "failures": [
+    {
+      "id": "research-catalogue",
+      "name": "Research Catalogue",
+      "url": "https://www.researchcatalogue.net/feed",
+      "error": "timeout after 20s",
+      "carriedForward": 0
+    },
+    {
+      "id": "nih-news-releases",
+      "name": "NIH News Releases",
+      "url": "https://www.nih.gov/news-releases/feed.xml",
+      "error": "HTTP 403",
+      "carriedForward": 0
+    },
+    {
+      "id": "nih-research-matters",
+      "name": "NIH Research Matters",
+      "url": "https://www.nih.gov/nih-research-matters/feed.xml",
+      "error": "HTTP 403",
+      "carriedForward": 10
+    }
+  ]
+}
