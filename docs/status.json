@@ -1,31 +1,17 @@
 {
-  "generatedAt": "2026-11-11T03:04:40.793Z",
-  "durationSeconds": 21.7,
+  "generatedAt": "2026-11-11T17:54:59.256Z",
+  "durationSeconds": 28.1,
   "feedsTotal": 168,
   "feedsOk": 162,
   "feedsFailed": 6,
-  "itemsTotal": 2494,
-  "itemsCarriedForward": 65,
-  "droppedDuplicates": 340,
+  "itemsTotal": 2477,
+  "itemsCarriedForward": 49,
+  "droppedDuplicates": 294,
   "droppedLowTrust": 0,
-  "droppedOlderThan120Days": 263,
+  "droppedOlderThan120Days": 272,
   "perSourceCap": 30,
-  "feedJsonBytes": 1781382,
+  "feedJsonBytes": 1767856,
   "failures": [
-    {
-      "id": "loc-the-signal",
-      "name": "Library of Congress (The Signal)",
-      "url": "https://blogs.loc.gov/thesignal/feed",
-      "error": "HTTP 429",
-      "carriedForward": 10
-    },
-    {
-      "id": "loc-bookmarked",
-      "name": "Library of Congress (Bookmarked)",
-      "url": "https://blogs.loc.gov/bookmarked/feed/?ea=enable",
-      "error": "HTTP 429",
-      "carriedForward": 6
-    },
     {
       "id": "research-catalogue",
       "name": "Research Catalogue",
@@ -41,11 +27,18 @@
       "carriedForward": 10
     },
     {
-      "id": "loc-law-blog",
-      "name": "Library of Congress (In Custodia Legis)",
-      "url": "https://blogs.loc.gov/law/feed/",
-      "error": "HTTP 429",
-      "carriedForward": 10
+      "id": "washington-supreme-opinions",
+      "name": "Washington Supreme Court Opinions",
+      "url": "https://www.courts.wa.gov/opinions/rssSCOpinionsFeed.cfm",
+      "error": "network error (EAI_AGAIN)",
+      "carriedForward": 1
+    },
+    {
+      "id": "nature-biotechnology-aop-v4",
+      "name": "Nature Biotechnology — Advance Online",
+      "url": "https://www.nature.com/nbt/journal/vaop/ncurrent/rss.rdf",
+      "error": "got an HTML page, not a feed (bot block or moved feed?)",
+      "carriedForward": 8
     },
     {
       "id": "annals-internal-medicine",
@@ -53,6 +46,13 @@
       "url": "https://www.acpjournals.org/action/showFeed?type=etoc&feed=rss&jc=aim",
       "error": "HTTP 403",
       "carriedForward": 29
+    },
+    {
+      "id": "cdc-mmwr",
+      "name": "CDC Morbidity and Mortality Weekly Report",
+      "url": "https://tools.cdc.gov/api/v2/resources/media/342778.rss",
+      "error": "no items parsed (content-type text/xml)",
+      "carriedForward": 1
     }
   ]
 }
