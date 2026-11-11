@@ -307,7 +307,7 @@ const CATEGORY_META = {
   quickHit: { label: 'Quick Hit', home: 'Quick Hits', sub: 'Pocket-sized insights to prime the day', emoji: '✨', accent: THEME.sunsetGold, card: 'quick_hit' },
   science: { label: 'Science', home: 'Science', sub: 'Mechanisms, evidence, and discovery through daily practice', emoji: '⚛️', accent: THEME.tideTeal, card: 'science' },
   biotechnology: { label: 'Biotechnology', home: 'Biotechnology', sub: 'Living systems, engineered and evaluated with care', emoji: '🧬', accent: THEME.bioMint, card: 'biotechnology' },
-  botany: { label: 'Botany & Plants', home: 'Botany & Plants', sub: 'How plants grow, reproduce, and shape the living world', emoji: '🌿', accent: THEME.moss, card: 'botany' },
+  botany: { label: 'Botany', home: 'Botany', sub: 'How plants grow, reproduce, and shape the living world', emoji: '🌿', accent: THEME.moss, card: 'botany' },
   medicine: { label: 'Medicine', home: 'Medicine', sub: 'Clinical reasoning, landmark evidence, and the path to becoming a doctor', emoji: '🩺', accent: THEME.cardinal, card: 'medicine' },
   space: { label: 'Space', home: 'Space', sub: 'Astrophysics, missions, and evidence from the long view', emoji: '🔭', accent: THEME.ultramarine, card: 'space' },
   philosophy: { label: 'Philosophy', home: 'Philosophy', sub: 'Arguments, traditions, and precise reasoning', emoji: '🧠', accent: THEME.inkIndigo, card: 'philosophy' },
@@ -373,7 +373,7 @@ const App = {
   host: null,          // mount element
   assetBase: '',
   feedURL: '',
-  version: '6517b7612be7',
+  version: 'cacbb76c7dfb',
   data: { core: null, learning: null, lawBank: null, medBank: null },
   feed: { items: [], generatedAt: null, state: 'idle', error: null },
   lawLibrary: { data: null, state: 'idle', error: null },
