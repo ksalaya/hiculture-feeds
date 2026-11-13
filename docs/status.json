@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-12T18:21:32.378Z",
-  "durationSeconds": 21.2,
+  "generatedAt": "2026-11-13T17:46:09.509Z",
+  "durationSeconds": 29,
   "feedsTotal": 168,
-  "feedsOk": 150,
-  "feedsFailed": 18,
-  "itemsTotal": 2492,
-  "itemsCarriedForward": 327,
-  "droppedDuplicates": 267,
+  "feedsOk": 160,
+  "feedsFailed": 8,
+  "itemsTotal": 2525,
+  "itemsCarriedForward": 89,
+  "droppedDuplicates": 315,
   "droppedLowTrust": 0,
-  "droppedOlderThan120Days": 249,
+  "droppedOlderThan120Days": 246,
   "perSourceCap": 30,
-  "feedJsonBytes": 1778264,
+  "feedJsonBytes": 1803275,
   "failures": [
     {
       "id": "loc-bookmarked",
@@ -23,7 +23,7 @@
       "id": "research-catalogue",
       "name": "Research Catalogue",
       "url": "https://www.researchcatalogue.net/feed",
-      "error": "timeout after 20s",
+      "error": "response exceeds 3145728 bytes",
       "carriedForward": 0
     },
     {
@@ -55,88 +55,18 @@
       "carriedForward": 1
     },
     {
-      "id": "arxiv-astro-ph",
-      "name": "arXiv (Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 30
-    },
-    {
-      "id": "arxiv-astro-ph-co",
-      "name": "arXiv (Cosmology & Nongalactic Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.CO",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 25
-    },
-    {
-      "id": "arxiv-astro-ph-ep",
-      "name": "arXiv (Earth & Planetary Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.EP",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 17
-    },
-    {
-      "id": "arxiv-astro-ph-ga",
-      "name": "arXiv (Astrophysics of Galaxies)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.GA",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 17
-    },
-    {
-      "id": "arxiv-astro-ph-he",
-      "name": "arXiv (High Energy Astrophysical Phenomena)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.HE",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 21
-    },
-    {
-      "id": "arxiv-astro-ph-im",
-      "name": "arXiv (Instrumentation & Methods for Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.IM",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 10
-    },
-    {
-      "id": "arxiv-astro-ph-sr",
-      "name": "arXiv (Solar & Stellar Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.SR",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 11
-    },
-    {
-      "id": "arxiv-quant-ph",
-      "name": "arXiv Quantum Physics Preprints",
-      "url": "https://rss.arxiv.org/rss/quant-ph",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 30
-    },
-    {
-      "id": "arxiv-q-bio",
-      "name": "arXiv Quantitative Biology Preprints",
-      "url": "https://rss.arxiv.org/rss/q-bio",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 30
-    },
-    {
-      "id": "arxiv-stat-ml",
-      "name": "arXiv Statistical Machine Learning Preprints",
-      "url": "https://rss.arxiv.org/rss/stat.ML",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 30
-    },
-    {
-      "id": "arxiv-cs-ai",
-      "name": "arXiv Artificial Intelligence Preprints",
-      "url": "https://rss.arxiv.org/rss/cs.AI",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 30
-    },
-    {
       "id": "annals-internal-medicine",
       "name": "Annals of Internal Medicine",
       "url": "https://www.acpjournals.org/action/showFeed?type=etoc&feed=rss&jc=aim",
       "error": "HTTP 403",
       "carriedForward": 29
+    },
+    {
+      "id": "courtlistener-scotus",
+      "name": "U.S. Supreme Court Opinions (CourtListener)",
+      "url": "https://www.courtlistener.com/feed/court/scotus/",
+      "error": "timeout after 20s",
+      "carriedForward": 13
     }
   ]
 }

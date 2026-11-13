@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-12T18:21:32.658Z",
-  "durationSeconds": 34.6,
-  "lawLibraryJsonBytes": 252610,
+  "generatedAt": "2026-11-13T17:46:09.676Z",
+  "durationSeconds": 9.2,
+  "lawLibraryJsonBytes": 252539,
   "updates": [
     {
       "id": "published-opinions",
@@ -22,10 +22,8 @@
   "juryInstructions": [
     {
       "id": "civil",
-      "ok": false,
-      "count": 13,
-      "error": "timeout after 20s",
-      "keptPrevious": true
+      "ok": true,
+      "count": 13
     },
     {
       "id": "criminal",
