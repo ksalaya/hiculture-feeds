@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-14T16:37:22.175Z",
-  "durationSeconds": 10.2,
-  "lawLibraryJsonBytes": 252425,
+  "generatedAt": "2026-11-15T17:13:14.175Z",
+  "durationSeconds": 57.9,
+  "lawLibraryJsonBytes": 252427,
   "updates": [
     {
       "id": "published-opinions",
@@ -47,14 +47,14 @@
   },
   "rules": {
     "listed": 39,
-    "due": 0,
-    "ok": 0,
+    "due": 39,
+    "ok": 39,
     "failed": 0,
     "skipped": 0,
     "keptPrevious": 0,
-    "notDue": 39,
+    "notDue": 0,
     "userAgent": {
-      "app": 0,
+      "app": 39,
       "browser": 0
     },
     "blocked": null

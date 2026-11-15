@@ -1,24 +1,17 @@
 {
-  "generatedAt": "2026-11-14T16:37:21.546Z",
-  "durationSeconds": 21.7,
+  "generatedAt": "2026-11-15T17:13:14.031Z",
+  "durationSeconds": 22,
   "feedsTotal": 168,
-  "feedsOk": 149,
-  "feedsFailed": 19,
+  "feedsOk": 148,
+  "feedsFailed": 20,
   "itemsTotal": 2520,
-  "itemsCarriedForward": 361,
-  "droppedDuplicates": 257,
+  "itemsCarriedForward": 380,
+  "droppedDuplicates": 251,
   "droppedLowTrust": 0,
-  "droppedOlderThan120Days": 266,
+  "droppedOlderThan120Days": 253,
   "perSourceCap": 30,
-  "feedJsonBytes": 1799988,
+  "feedJsonBytes": 1800296,
   "failures": [
-    {
-      "id": "loc-the-signal",
-      "name": "Library of Congress (The Signal)",
-      "url": "https://blogs.loc.gov/thesignal/feed",
-      "error": "HTTP 429",
-      "carriedForward": 10
-    },
     {
       "id": "loc-bookmarked",
       "name": "Library of Congress (Bookmarked)",
@@ -27,11 +20,25 @@
       "carriedForward": 6
     },
     {
+      "id": "gutenberg-new",
+      "name": "Project Gutenberg (New eBooks)",
+      "url": "https://www.gutenberg.org/cache/epub/feeds/today.rss",
+      "error": "HTTP 403",
+      "carriedForward": 11
+    },
+    {
       "id": "research-catalogue",
       "name": "Research Catalogue",
       "url": "https://www.researchcatalogue.net/feed",
-      "error": "timeout after 20s",
+      "error": "response exceeds 3145728 bytes",
       "carriedForward": 0
+    },
+    {
+      "id": "hi-fructose",
+      "name": "Hi-Fructose",
+      "url": "https://hifructose.com/feed/",
+      "error": "timeout after 20s",
+      "carriedForward": 18
     },
     {
       "id": "archpaper",
@@ -51,7 +58,7 @@
       "id": "cafc-opinions",
       "name": "U.S. Court of Appeals (Federal Circuit) Opinions",
       "url": "https://ecf.cafc.uscourts.gov/n/beam/servlet/TransportRoom?servlet=RSSGenerator",
-      "error": "network error (ECONNRESET)",
+      "error": "no items parsed (content-type application/rss+xml)",
       "carriedForward": 1
     },
     {
