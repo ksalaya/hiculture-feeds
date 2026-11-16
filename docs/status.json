@@ -1,17 +1,24 @@
 {
-  "generatedAt": "2026-11-15T17:13:14.031Z",
-  "durationSeconds": 22,
+  "generatedAt": "2026-11-16T20:30:42.960Z",
+  "durationSeconds": 27.3,
   "feedsTotal": 168,
-  "feedsOk": 148,
-  "feedsFailed": 20,
-  "itemsTotal": 2520,
-  "itemsCarriedForward": 380,
-  "droppedDuplicates": 251,
+  "feedsOk": 159,
+  "feedsFailed": 9,
+  "itemsTotal": 2487,
+  "itemsCarriedForward": 87,
+  "droppedDuplicates": 319,
   "droppedLowTrust": 0,
-  "droppedOlderThan120Days": 253,
+  "droppedOlderThan120Days": 259,
   "perSourceCap": 30,
-  "feedJsonBytes": 1800296,
+  "feedJsonBytes": 1776292,
   "failures": [
+    {
+      "id": "loc-the-signal",
+      "name": "Library of Congress (The Signal)",
+      "url": "https://blogs.loc.gov/thesignal/feed",
+      "error": "HTTP 429",
+      "carriedForward": 10
+    },
     {
       "id": "loc-bookmarked",
       "name": "Library of Congress (Bookmarked)",
@@ -23,7 +30,7 @@
       "id": "gutenberg-new",
       "name": "Project Gutenberg (New eBooks)",
       "url": "https://www.gutenberg.org/cache/epub/feeds/today.rss",
-      "error": "HTTP 403",
+      "error": "HTTP 503",
       "carriedForward": 11
     },
     {
@@ -34,11 +41,11 @@
       "carriedForward": 0
     },
     {
-      "id": "hi-fructose",
-      "name": "Hi-Fructose",
-      "url": "https://hifructose.com/feed/",
-      "error": "timeout after 20s",
-      "carriedForward": 18
+      "id": "juxtapoz",
+      "name": "Juxtapoz",
+      "url": "https://www.juxtapoz.com/news/?format=feed",
+      "error": "got an HTML page, not a feed (bot block or moved feed?)",
+      "carriedForward": 10
     },
     {
       "id": "archpaper",
@@ -55,95 +62,11 @@
       "carriedForward": 10
     },
     {
-      "id": "cafc-opinions",
-      "name": "U.S. Court of Appeals (Federal Circuit) Opinions",
-      "url": "https://ecf.cafc.uscourts.gov/n/beam/servlet/TransportRoom?servlet=RSSGenerator",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 1
-    },
-    {
       "id": "washington-supreme-opinions",
       "name": "Washington Supreme Court Opinions",
       "url": "https://www.courts.wa.gov/opinions/rssSCOpinionsFeed.cfm",
       "error": "no items parsed (content-type text/xml)",
       "carriedForward": 1
-    },
-    {
-      "id": "arxiv-astro-ph",
-      "name": "arXiv (Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 30
-    },
-    {
-      "id": "arxiv-astro-ph-co",
-      "name": "arXiv (Cosmology & Nongalactic Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.CO",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 26
-    },
-    {
-      "id": "arxiv-astro-ph-ep",
-      "name": "arXiv (Earth & Planetary Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.EP",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 24
-    },
-    {
-      "id": "arxiv-astro-ph-ga",
-      "name": "arXiv (Astrophysics of Galaxies)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.GA",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 26
-    },
-    {
-      "id": "arxiv-astro-ph-he",
-      "name": "arXiv (High Energy Astrophysical Phenomena)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.HE",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 24
-    },
-    {
-      "id": "arxiv-astro-ph-im",
-      "name": "arXiv (Instrumentation & Methods for Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.IM",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 22
-    },
-    {
-      "id": "arxiv-astro-ph-sr",
-      "name": "arXiv (Solar & Stellar Astrophysics)",
-      "url": "https://rss.arxiv.org/rss/astro-ph.SR",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 24
-    },
-    {
-      "id": "arxiv-quant-ph",
-      "name": "arXiv Quantum Physics Preprints",
-      "url": "https://rss.arxiv.org/rss/quant-ph",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 30
-    },
-    {
-      "id": "arxiv-q-bio",
-      "name": "arXiv Quantitative Biology Preprints",
-      "url": "https://rss.arxiv.org/rss/q-bio",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 30
-    },
-    {
-      "id": "arxiv-stat-ml",
-      "name": "arXiv Statistical Machine Learning Preprints",
-      "url": "https://rss.arxiv.org/rss/stat.ML",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 29
-    },
-    {
-      "id": "arxiv-cs-ai",
-      "name": "arXiv Artificial Intelligence Preprints",
-      "url": "https://rss.arxiv.org/rss/cs.AI",
-      "error": "no items parsed (content-type application/rss+xml)",
-      "carriedForward": 29
     },
     {
       "id": "annals-internal-medicine",
