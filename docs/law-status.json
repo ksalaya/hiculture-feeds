@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-18T18:52:29.969Z",
-  "durationSeconds": 10.8,
-  "lawLibraryJsonBytes": 251698,
+  "generatedAt": "2026-11-19T19:00:02.302Z",
+  "durationSeconds": 9.9,
+  "lawLibraryJsonBytes": 250984,
   "updates": [
     {
       "id": "published-opinions",
       "ok": true,
-      "count": 47
+      "count": 46
     },
     {
       "id": "rules-updates",

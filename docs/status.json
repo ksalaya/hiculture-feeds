@@ -1,17 +1,24 @@
 {
-  "generatedAt": "2026-11-18T18:52:29.872Z",
-  "durationSeconds": 23.5,
+  "generatedAt": "2026-11-19T19:00:02.110Z",
+  "durationSeconds": 22.3,
   "feedsTotal": 168,
-  "feedsOk": 160,
-  "feedsFailed": 8,
-  "itemsTotal": 2465,
-  "itemsCarriedForward": 78,
-  "droppedDuplicates": 337,
+  "feedsOk": 159,
+  "feedsFailed": 9,
+  "itemsTotal": 2475,
+  "itemsCarriedForward": 105,
+  "droppedDuplicates": 330,
   "droppedLowTrust": 0,
-  "droppedOlderThan120Days": 254,
+  "droppedOlderThan120Days": 242,
   "perSourceCap": 30,
-  "feedJsonBytes": 1764404,
+  "feedJsonBytes": 1773775,
   "failures": [
+    {
+      "id": "loc-the-signal",
+      "name": "Library of Congress (The Signal)",
+      "url": "https://blogs.loc.gov/thesignal/feed",
+      "error": "HTTP 429",
+      "carriedForward": 10
+    },
     {
       "id": "loc-bookmarked",
       "name": "Library of Congress (Bookmarked)",
@@ -34,6 +41,13 @@
       "carriedForward": 0
     },
     {
+      "id": "hi-fructose",
+      "name": "Hi-Fructose",
+      "url": "https://hifructose.com/feed/",
+      "error": "timeout after 20s",
+      "carriedForward": 18
+    },
+    {
       "id": "juxtapoz",
       "name": "Juxtapoz",
       "url": "https://www.juxtapoz.com/news/?format=feed",
@@ -53,13 +67,6 @@
       "url": "https://blogs.loc.gov/law/feed/",
       "error": "HTTP 429",
       "carriedForward": 10
-    },
-    {
-      "id": "washington-supreme-opinions",
-      "name": "Washington Supreme Court Opinions",
-      "url": "https://www.courts.wa.gov/opinions/rssSCOpinionsFeed.cfm",
-      "error": "no items parsed (content-type text/xml)",
-      "carriedForward": 1
     },
     {
       "id": "annals-internal-medicine",
