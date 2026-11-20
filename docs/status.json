@@ -1,30 +1,23 @@
 {
-  "generatedAt": "2026-11-19T19:00:02.110Z",
-  "durationSeconds": 22.3,
+  "generatedAt": "2026-11-20T18:38:23.580Z",
+  "durationSeconds": 23.1,
   "feedsTotal": 168,
-  "feedsOk": 159,
-  "feedsFailed": 9,
-  "itemsTotal": 2475,
-  "itemsCarriedForward": 105,
-  "droppedDuplicates": 330,
+  "feedsOk": 160,
+  "feedsFailed": 8,
+  "itemsTotal": 2467,
+  "itemsCarriedForward": 111,
+  "droppedDuplicates": 320,
   "droppedLowTrust": 0,
-  "droppedOlderThan120Days": 242,
+  "droppedOlderThan120Days": 236,
   "perSourceCap": 30,
-  "feedJsonBytes": 1773775,
+  "feedJsonBytes": 1764462,
   "failures": [
     {
-      "id": "loc-the-signal",
-      "name": "Library of Congress (The Signal)",
-      "url": "https://blogs.loc.gov/thesignal/feed",
-      "error": "HTTP 429",
+      "id": "scipost-publications",
+      "name": "SciPost Publications",
+      "url": "https://scipost.org/rss/publications/",
+      "error": "network error (UND_ERR_CONNECT_TIMEOUT)",
       "carriedForward": 10
-    },
-    {
-      "id": "loc-bookmarked",
-      "name": "Library of Congress (Bookmarked)",
-      "url": "https://blogs.loc.gov/bookmarked/feed/?ea=enable",
-      "error": "HTTP 429",
-      "carriedForward": 7
     },
     {
       "id": "gutenberg-new",
@@ -45,7 +38,7 @@
       "name": "Hi-Fructose",
       "url": "https://hifructose.com/feed/",
       "error": "timeout after 20s",
-      "carriedForward": 18
+      "carriedForward": 17
     },
     {
       "id": "juxtapoz",
@@ -62,18 +55,18 @@
       "carriedForward": 10
     },
     {
-      "id": "loc-law-blog",
-      "name": "Library of Congress (In Custodia Legis)",
-      "url": "https://blogs.loc.gov/law/feed/",
-      "error": "HTTP 429",
-      "carriedForward": 10
+      "id": "new-phytologist",
+      "name": "New Phytologist",
+      "url": "https://nph.onlinelibrary.wiley.com/feed/14698137/most-recent",
+      "error": "HTTP 403",
+      "carriedForward": 28
     },
     {
-      "id": "annals-internal-medicine",
-      "name": "Annals of Internal Medicine",
-      "url": "https://www.acpjournals.org/action/showFeed?type=etoc&feed=rss&jc=aim",
+      "id": "american-journal-of-botany",
+      "name": "American Journal of Botany",
+      "url": "https://bsapubs.onlinelibrary.wiley.com/feed/15372197/most-recent",
       "error": "HTTP 403",
-      "carriedForward": 29
+      "carriedForward": 25
     }
   ]
 }
