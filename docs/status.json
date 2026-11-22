@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-21T17:35:40.151Z",
-  "durationSeconds": 22.1,
+  "generatedAt": "2026-11-22T17:52:00.501Z",
+  "durationSeconds": 21.8,
   "feedsTotal": 168,
-  "feedsOk": 147,
-  "feedsFailed": 21,
-  "itemsTotal": 2473,
-  "itemsCarriedForward": 341,
+  "feedsOk": 148,
+  "feedsFailed": 20,
+  "itemsTotal": 2472,
+  "itemsCarriedForward": 324,
   "droppedDuplicates": 247,
   "droppedLowTrust": 0,
-  "droppedOlderThan120Days": 235,
+  "droppedOlderThan120Days": 248,
   "perSourceCap": 30,
-  "feedJsonBytes": 1768785,
+  "feedJsonBytes": 1768016,
   "failures": [
     {
       "id": "loc-the-signal",
@@ -39,13 +39,6 @@
       "url": "https://www.researchcatalogue.net/feed",
       "error": "timeout after 20s",
       "carriedForward": 0
-    },
-    {
-      "id": "hi-fructose",
-      "name": "Hi-Fructose",
-      "url": "https://hifructose.com/feed/",
-      "error": "timeout after 20s",
-      "carriedForward": 17
     },
     {
       "id": "juxtapoz",
