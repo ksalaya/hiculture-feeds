@@ -1,31 +1,17 @@
 {
-  "generatedAt": "2026-11-23T22:04:14.731Z",
-  "durationSeconds": 21.7,
+  "generatedAt": "2026-11-24T20:40:33.619Z",
+  "durationSeconds": 11.8,
   "feedsTotal": 168,
   "feedsOk": 160,
   "feedsFailed": 8,
-  "itemsTotal": 2472,
-  "itemsCarriedForward": 88,
-  "droppedDuplicates": 324,
+  "itemsTotal": 2508,
+  "itemsCarriedForward": 107,
+  "droppedDuplicates": 318,
   "droppedLowTrust": 0,
-  "droppedOlderThan120Days": 249,
+  "droppedOlderThan120Days": 248,
   "perSourceCap": 30,
-  "feedJsonBytes": 1768117,
+  "feedJsonBytes": 1792478,
   "failures": [
-    {
-      "id": "loc-the-signal",
-      "name": "Library of Congress (The Signal)",
-      "url": "https://blogs.loc.gov/thesignal/feed",
-      "error": "HTTP 429",
-      "carriedForward": 10
-    },
-    {
-      "id": "loc-bookmarked",
-      "name": "Library of Congress (Bookmarked)",
-      "url": "https://blogs.loc.gov/bookmarked/feed/?ea=enable",
-      "error": "HTTP 429",
-      "carriedForward": 7
-    },
     {
       "id": "gutenberg-new",
       "name": "Project Gutenberg (New eBooks)",
@@ -34,10 +20,17 @@
       "carriedForward": 11
     },
     {
+      "id": "hyperallergic",
+      "name": "Hyperallergic",
+      "url": "https://hyperallergic.com/feed/",
+      "error": "HTTP 404",
+      "carriedForward": 15
+    },
+    {
       "id": "research-catalogue",
       "name": "Research Catalogue",
       "url": "https://www.researchcatalogue.net/feed",
-      "error": "timeout after 20s",
+      "error": "response exceeds 3145728 bytes",
       "carriedForward": 0
     },
     {
@@ -55,18 +48,25 @@
       "carriedForward": 10
     },
     {
-      "id": "loc-law-blog",
-      "name": "Library of Congress (In Custodia Legis)",
-      "url": "https://blogs.loc.gov/law/feed/",
-      "error": "HTTP 429",
-      "carriedForward": 10
+      "id": "doj-antitrust-news-rss-v3",
+      "name": "DOJ Antitrust Division — News (RSS)",
+      "url": "https://www.justice.gov/news/rss?field_component=376&require_all=0&search_api_language=en&show_public_archived=0&type%5B0%5D=image_gallery&type%5B1%5D=press_release&type%5B2%5D=speech&type%5B3%5D=youtube_video",
+      "error": "HTTP 401",
+      "carriedForward": 22
     },
     {
-      "id": "annals-internal-medicine",
-      "name": "Annals of Internal Medicine",
-      "url": "https://www.acpjournals.org/action/showFeed?type=etoc&feed=rss&jc=aim",
-      "error": "HTTP 403",
-      "carriedForward": 30
+      "id": "fda-biologics",
+      "name": "FDA Biologics Updates",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/biologics/rss.xml",
+      "error": "HTTP 401",
+      "carriedForward": 19
+    },
+    {
+      "id": "fda-press-releases",
+      "name": "FDA Press Announcements",
+      "url": "https://www.fda.gov/about-fda/contact-fda/stay-informed/rss-feeds/press-releases/rss.xml",
+      "error": "HTTP 401",
+      "carriedForward": 20
     }
   ]
 }
