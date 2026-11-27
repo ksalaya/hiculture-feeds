@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-26T19:38:38.289Z",
-  "durationSeconds": 20.8,
+  "generatedAt": "2026-11-27T19:29:36.675Z",
+  "durationSeconds": 26.2,
   "feedsTotal": 168,
-  "feedsOk": 157,
-  "feedsFailed": 11,
-  "itemsTotal": 2490,
-  "itemsCarriedForward": 109,
-  "droppedDuplicates": 334,
+  "feedsOk": 146,
+  "feedsFailed": 22,
+  "itemsTotal": 2489,
+  "itemsCarriedForward": 332,
+  "droppedDuplicates": 225,
   "droppedLowTrust": 0,
-  "droppedOlderThan120Days": 251,
+  "droppedOlderThan120Days": 254,
   "perSourceCap": 30,
-  "feedJsonBytes": 1781019,
+  "feedJsonBytes": 1779588,
   "failures": [
     {
       "id": "loc-the-signal",
@@ -44,7 +44,7 @@
       "id": "research-catalogue",
       "name": "Research Catalogue",
       "url": "https://www.researchcatalogue.net/feed",
-      "error": "response exceeds 3145728 bytes",
+      "error": "timeout after 20s",
       "carriedForward": 0
     },
     {
@@ -76,6 +76,76 @@
       "carriedForward": 1
     },
     {
+      "id": "arxiv-astro-ph",
+      "name": "arXiv (Astrophysics)",
+      "url": "https://rss.arxiv.org/rss/astro-ph",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 30
+    },
+    {
+      "id": "arxiv-astro-ph-co",
+      "name": "arXiv (Cosmology & Nongalactic Astrophysics)",
+      "url": "https://rss.arxiv.org/rss/astro-ph.CO",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 23
+    },
+    {
+      "id": "arxiv-astro-ph-ep",
+      "name": "arXiv (Earth & Planetary Astrophysics)",
+      "url": "https://rss.arxiv.org/rss/astro-ph.EP",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 15
+    },
+    {
+      "id": "arxiv-astro-ph-ga",
+      "name": "arXiv (Astrophysics of Galaxies)",
+      "url": "https://rss.arxiv.org/rss/astro-ph.GA",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 23
+    },
+    {
+      "id": "arxiv-astro-ph-he",
+      "name": "arXiv (High Energy Astrophysical Phenomena)",
+      "url": "https://rss.arxiv.org/rss/astro-ph.HE",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 18
+    },
+    {
+      "id": "arxiv-astro-ph-im",
+      "name": "arXiv (Instrumentation & Methods for Astrophysics)",
+      "url": "https://rss.arxiv.org/rss/astro-ph.IM",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 13
+    },
+    {
+      "id": "arxiv-astro-ph-sr",
+      "name": "arXiv (Solar & Stellar Astrophysics)",
+      "url": "https://rss.arxiv.org/rss/astro-ph.SR",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 11
+    },
+    {
+      "id": "arxiv-quant-ph",
+      "name": "arXiv Quantum Physics Preprints",
+      "url": "https://rss.arxiv.org/rss/quant-ph",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 30
+    },
+    {
+      "id": "arxiv-q-bio",
+      "name": "arXiv Quantitative Biology Preprints",
+      "url": "https://rss.arxiv.org/rss/q-bio",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 30
+    },
+    {
+      "id": "arxiv-stat-ml",
+      "name": "arXiv Statistical Machine Learning Preprints",
+      "url": "https://rss.arxiv.org/rss/stat.ML",
+      "error": "no items parsed (content-type application/rss+xml)",
+      "carriedForward": 29
+    },
+    {
       "id": "bmj-recent",
       "name": "The BMJ",
       "url": "https://www.bmj.com/rss/recent.xml",
@@ -88,6 +158,13 @@
       "url": "https://www.acpjournals.org/action/showFeed?type=etoc&feed=rss&jc=aim",
       "error": "HTTP 403",
       "carriedForward": 29
+    },
+    {
+      "id": "plos-medicine",
+      "name": "PLOS Medicine",
+      "url": "https://journals.plos.org/plosmedicine/feed/atom",
+      "error": "timeout after 20s",
+      "carriedForward": 1
     }
   ]
 }
